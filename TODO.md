@@ -32,3 +32,4 @@ TODO
 3. marks
 4. brushes
 5. legend
+	- `test.legend.js`: issue #14
