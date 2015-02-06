@@ -7,8 +7,9 @@ Matrix Diagram Specification
 ---
 1. 	[Installation](#installation)
 1. 	[Usage](#usage)
-	- 	[Examples](#examples)
+	- 	[Examples](#usage-examples)
 1. 	[Specification](#specification)
+	-	[Examples](#spec-examples)
 1. 	[Tests](#tests)
 	-	[Unit](#unit)
 	-	[Coverage](#test-coverage)
@@ -80,6 +81,7 @@ var errs = spec.errors();
 ```
 
 
+<a name="usage-examples"></a>
 ### Examples
 
 ``` javascript
@@ -144,7 +146,12 @@ $ node ./examples/index.js
 
 
 
+<a name="spec-examples"></a>
+### Examples
 
+``` javascript
+{}
+```
 
 ---
 ## Tests
