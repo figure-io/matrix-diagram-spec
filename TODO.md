@@ -7,7 +7,10 @@ TODO
 4. monitor IMJV [issue #14](https://github.com/mafintosh/is-my-json-valid/issues/14)
 5. ToC
 6. README specification
-7. 
+7. possibly relax the requirements (e.g., transitions, legend, interactions, settings, brushes)
+	-	what are the core elements which are needed?
+	-	how does this fit in with the `config` method?
+8. 
 
 
 ### Tests

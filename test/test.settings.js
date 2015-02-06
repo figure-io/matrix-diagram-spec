@@ -23,7 +23,7 @@ var tmpl = require( './fixtures/template.json' );
 
 // TESTS //
 
-describe( 'settings', function tests() {
+describe( 'general settings', function tests() {
 
 	var template;
 
