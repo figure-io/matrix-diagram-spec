@@ -1,5 +1,5 @@
 {
-  "name": "matrix-diagram-schema",
+  "name": "matrix-diagram-spec",
   "version": "0.0.0",
   "description": "JSON specification and validation for matrix diagrams.",
   "author": {
@@ -20,7 +20,7 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/figure-io/matrix-diagram-schema.git"
+    "url": "git://github.com/figure-io/matrix-diagram-spec.git"
   },
   "keywords": [
     "figure-io",
@@ -38,10 +38,11 @@
     "validator",
     "validation",
     "template",
+    "specification",
     "spec"
   ],
   "bugs": {
-    "url": "https://github.com/figure-io/matrix-diagram-schema/issues"
+    "url": "https://github.com/figure-io/matrix-diagram-spec/issues"
   },
   "dependencies": {
     "is-my-json-valid": "^2.3.1"

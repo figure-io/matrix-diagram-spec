@@ -175,17 +175,17 @@ Copyright &copy; 2014. Athan Reines.
 [npm-image]: http://img.shields.io/npm/v/matrix-diagram-spec.svg
 [npm-url]: https://npmjs.org/package/matrix-diagram-spec
 
-[travis-image]: http://img.shields.io/travis/figure-io/mean/master.svg
-[travis-url]: https://travis-ci.org/figure-io/mean
+[travis-image]: http://img.shields.io/travis/figure-io/matrix-diagram-spec/master.svg
+[travis-url]: https://travis-ci.org/figure-io/matrix-diagram-spec
 
-[coveralls-image]: https://img.shields.io/coveralls/figure-io/mean/master.svg
-[coveralls-url]: https://coveralls.io/r/figure-io/mean?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/figure-io/matrix-diagram-spec/master.svg
+[coveralls-url]: https://coveralls.io/r/figure-io/matrix-diagram-spec?branch=master
 
-[dependencies-image]: http://img.shields.io/david/figure-io/mean.svg
-[dependencies-url]: https://david-dm.org/figure-io/mean
+[dependencies-image]: http://img.shields.io/david/figure-io/matrix-diagram-spec.svg
+[dependencies-url]: https://david-dm.org/figure-io/matrix-diagram-spec
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/figure-io/mean.svg
-[dev-dependencies-url]: https://david-dm.org/dev/figure-io/mean
+[dev-dependencies-image]: http://img.shields.io/david/dev/figure-io/matrix-diagram-spec.svg
+[dev-dependencies-url]: https://david-dm.org/dev/figure-io/matrix-diagram-spec
 
-[github-issues-image]: http://img.shields.io/github/issues/figure-io/mean.svg
-[github-issues-url]: https://github.com/figure-io/mean/issues
+[github-issues-image]: http://img.shields.io/github/issues/figure-io/matrix-diagram-spec.svg
+[github-issues-url]: https://github.com/figure-io/matrix-diagram-spec/issues
