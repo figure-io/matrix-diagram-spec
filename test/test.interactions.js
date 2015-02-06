@@ -174,7 +174,7 @@ describe( 'interactions', function tests() {
 		}
 	});
 
-	it( 'should not require any particular interaction settings', function test() {
+	it( 'should not require any particular fields', function test() {
 		template.interactions = {};
 		assert.ok( spec.validate( template ) );
 	});
