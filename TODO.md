@@ -15,7 +15,8 @@ TODO
 
 ### Tests
 
-1. data URL format fails to invalid a configuration when set to `null`. See tests.
-2. #1 for canvas
-3. dido for padding
-4. 
+1. scales
+2. axes
+3. marks
+4. brushes
+5. legend
