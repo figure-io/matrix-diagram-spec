@@ -1,0 +1,100 @@
+{
+	"name": [],
+	"type": false,
+	"meta": {
+		"title": 1,
+		"description": null
+	},
+	"data": [
+		{
+			"name": {},
+			"description": true,
+			"rownames": {},
+			"colnames": 5,
+			"values": {}
+		}
+	],
+	"canvas": {
+		"width": false,
+		"height": "yep",
+		"padding": {
+			"left": "nope",
+			"right": false,
+			"top": [],
+			"bottom": {}
+		}
+	},
+	"scales": {
+		"x": [],
+		"y": {
+			"type": true,
+			"description": null,
+			"domain": {},
+			"range": ""
+		},
+		"z": {
+			"type": [],
+			"description": false,
+			"domain": [],
+			"range": true
+		},
+		"color": {
+			"type": null,
+			"description": {},
+			"domain": true,
+			"range": {}
+		}
+	},
+	"axes": [
+		false,
+		{
+			"type": [],
+			"scale": null,
+			"label": {}
+		}
+	],
+	"marks": [
+		{
+			"name": [],
+			"type": false,
+			"description": null,
+			"data": "beep",
+			"properties": {
+				"fill": "yep",
+				"fillOpacity": {
+					"scale": null,
+					"field": []
+				}
+			}
+		}
+	],
+	"brushes": {
+		"x": false,
+		"y": {
+			"data": {
+				"name": null
+			}
+		}
+	},
+	"legend": {
+		"fill": "whopper",
+		"fillOpacity": {
+			"label": 5
+		}
+	},
+	"transitions": {
+		"duration": []
+	},
+	"interactions": {
+		"brushable": "true",
+		"brushableRows": [],
+		"brushableCols": {},
+		"sortableRows": null,
+		"sortableCols": 5,
+		"resizable": [false]
+	},
+	"settings": {
+		"autoResize": "true",
+		"autoUpdate": 5
+	}
+}

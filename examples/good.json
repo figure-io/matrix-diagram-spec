@@ -1,0 +1,184 @@
+{
+	"name": "Beep",
+	"type": "matrix-diagram",
+	"meta": {
+		"title": "Woo",
+		"description": "Boop da boop."
+	},
+	"data": [
+		{
+			"name": "dat",
+			"description": "Dat a dat dat dat",
+			"rownames": [
+				"a",
+				"b",
+				"c"
+			],
+			"colnames": [
+				"d",
+				"e",
+				"f"
+			],
+			"values": [
+				[
+					{
+						"a": 1,
+						"b": 0.5
+					},
+					{
+						"a": 0,
+						"b": 0.25
+					},
+					{
+						"a": 1,
+						"b": 1
+					}
+				],
+				[
+					{
+						"a": 0,
+						"b": 0.5
+					},
+					{
+						"a": 1,
+						"b": 0.25
+					},
+					{
+						"a": 0,
+						"b": 1
+					}
+				],
+				[
+					{
+						"a": 1,
+						"b": 0.15
+					},
+					{
+						"a": 1,
+						"b": 0.85
+					},
+					{
+						"a": 0,
+						"b": 0
+					}
+				]
+			]
+		}
+	],
+	"canvas": {
+		"width": 600,
+		"height": 400,
+		"padding": {
+			"left": 40,
+			"right": 40,
+			"top": 40,
+			"bottom": 40
+		}
+	},
+	"scales": {
+		"x": {
+			"type": "ordinal",
+			"description": "",
+			"domain": [ 3, 1, 2 ],
+			"range": "width"
+		},
+		"y": {
+			"type": "ordinal",
+			"description": "",
+			"domain": [ 2, 1, 3 ],
+			"range": "height"
+		},
+		"z": {
+			"type": "linear",
+			"description": "",
+			"domain": {
+				"min": 0,
+				"max": 1
+			},
+			"range": {
+				"min": 0,
+				"max": 1
+			}
+		},
+		"color": {
+			"type": "ordinal",
+			"description": "",
+			"domain": {
+				"min": 0,
+				"max": 1
+			},
+			"range": [
+				"#eee",
+				"#ccc",
+				"#474747"
+			]
+		}
+	},
+	"axes": [
+		{
+			"type": "x",
+			"scale": "x",
+			"label": ""
+		},
+		{
+			"type": "y",
+			"scale": "y",
+			"label": ""
+		}
+	],
+	"marks": [
+		{
+			"name": "Baz",
+			"type": "rect",
+			"description": "Marky mark marks",
+			"data": {
+				"name": "dat"
+			},
+			"properties": {
+				"fill": {
+					"scale": "color",
+					"field": "a"
+				},
+				"fillOpacity": {
+					"scale": "z",
+					"field": "b"
+				}
+			}
+		}
+	],
+	"brushes": {
+		"x": {
+			"data": {
+				"name": ""
+			}
+		},
+		"y": {
+			"data": {
+				"name": ""
+			}
+		}
+	},
+	"legend": {
+		"fill": {
+			"label": ""
+		},
+		"fillOpacity": {
+			"label": ""
+		}
+	},
+	"transitions": {
+		"duration": 2500
+	},
+	"interactions": {
+		"brushable": true,
+		"brushableRows": false,
+		"brushableCols": false,
+		"sortableRows": true,
+		"sortableCols": true,
+		"resizable": false
+	},
+	"settings": {
+		"autoResize": true,
+		"autoUpdate": true
+	}
+}

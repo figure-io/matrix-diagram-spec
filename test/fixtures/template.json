@@ -1,0 +1,177 @@
+{
+	"name": "",
+	"type": "matrix-diagram",
+	"meta": {
+		"title": "",
+		"description": ""
+	},
+	"data": [
+		{
+			"name": "",
+			"description": "",
+			"rownames": [],
+			"colnames": [],
+			"values": [[]],
+			"transforms": [
+				{
+					"type": ""
+				}
+			]
+		},
+		{
+			"name": "",
+			"description": "",
+			"url": "http://127.0.0.1:9090/",
+			"format": {
+				"type": "json",
+				"fields": {
+					"rownames": "",
+					"colnames": "",
+					"values": ""
+				}
+			},
+			"transforms": [
+				{
+					"type": ""
+				}
+			]
+		},
+		{
+			"name": "",
+			"description": "",
+			"source": "",
+			"transforms": [
+				{
+					"type": ""
+				}
+			]
+		}
+	],
+	"canvas": {
+		"width": null,
+		"height": null,
+		"padding": {
+			"left": null,
+			"right": null,
+			"top": null,
+			"bottom": null
+		}
+	},
+	"scales": {
+		"x": {
+			"type": "ordinal",
+			"description": "",
+			"domain": [],
+			"range": "width"
+		},
+		"y": {
+			"type": "ordinal",
+			"description": "",
+			"domain": [],
+			"range": "height"
+		},
+		"z": {
+			"type": "linear",
+			"description": "",
+			"domain": {
+				"min": null,
+				"max": null
+			},
+			"range": {
+				"min": 0,
+				"max": 1
+			}
+		},
+		"color": {
+			"type": "ordinal",
+			"description": "",
+			"domain": {
+				"min": null,
+				"max": null
+			},
+			"range": []
+		}
+	},
+	"axes": [
+		{
+			"type": "x",
+			"scale": "x",
+			"label": ""
+		},
+		{
+			"type": "y",
+			"scale": "y",
+			"label": ""
+		}
+	],
+	"marks": [
+		{
+			"name": "",
+			"type": "rect",
+			"description": "",
+			"data": {
+				"name": "",
+				"transforms": [
+					{
+						"type": ""
+					}
+				]
+			},
+			"properties": {
+				"fill": {
+					"scale": "color",
+					"field": ""
+				},
+				"fillOpacity": {
+					"scale": "z",
+					"field": ""
+				}
+			}
+		}
+	],
+	"brushes": {
+		"x": {
+			"data": {
+				"name": "",
+				"transforms": [
+					{
+						"type": ""
+					}
+				]
+			}
+		},
+		"y": {
+			"data": {
+				"name": "",
+				"transforms": [
+					{
+						"type": ""
+					}
+				]
+			}
+		}
+	},
+	"legend": {
+		"fill": {
+			"label": ""
+		},
+		"fillOpacity": {
+			"label": ""
+		}
+	},
+	"transitions": {
+		"duration": 2500
+	},
+	"interactions": {
+		"brushable": false,
+		"brushableRows": false,
+		"brushableCols": false,
+		"sortableRows": false,
+		"sortableCols": false,
+		"resizable": false
+	},
+	"settings": {
+		"autoResize": true,
+		"autoUpdate": true
+	}
+}

@@ -1,0 +1,90 @@
+{
+	"name": "",
+	"type": "matrix-diagram",
+	"meta": {},
+	"data": [
+		{
+			"name": "",
+			"rownames": [],
+			"colnames": [],
+			"values": [[]]
+		}
+	],
+	"canvas": {
+		"width": null,
+		"height": null,
+		"padding": {
+			"left": null,
+			"right": null,
+			"top": null,
+			"bottom": null
+		}
+	},
+	"scales": {
+		"x": {
+			"type": "ordinal",
+			"domain": [],
+			"range": "width"
+		},
+		"y": {
+			"type": "ordinal",
+			"domain": [],
+			"range": "height"
+		},
+		"z": {
+			"type": "linear",
+			"domain": {
+				"min": null,
+				"max": null
+			},
+			"range": {
+				"min": 0,
+				"max": 1
+			}
+		},
+		"color": {
+			"type": "ordinal",
+			"domain": {
+				"min": null,
+				"max": null
+			},
+			"range": []
+		}
+	},
+	"axes": [
+		{
+			"type": "x",
+			"scale": "x",
+			"label": ""
+		},
+		{
+			"type": "y",
+			"scale": "y",
+			"label": ""
+		}
+	],
+	"marks": [
+		{
+			"name": "",
+			"type": "rect",
+			"data": {
+				"name": ""
+			},
+			"properties": {
+				"fill": {
+					"scale": "color",
+					"field": ""
+				},
+				"fillOpacity": {
+					"scale": "z",
+					"field": ""
+				}
+			}
+		}
+	],
+	"brushes": {},
+	"legend": {},
+	"transitions": {},
+	"interactions": {},
+	"settings": {}
+}
