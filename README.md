@@ -7,9 +7,9 @@ Matrix Diagram Specification
 ---
 1. 	[Installation](#installation)
 1. 	[Usage](#usage)
-	- 	[spec.template](#method-template)
-	-	[spec.validate](#method-validate)
-	-	[spec.errors](#method-errors)
+	- 	[spec.template()](#method-template)
+	-	[spec.validate( config )](#method-validate)
+	-	[spec.errors()](#method-errors)
 1. 	[Examples](#examples)
 1. 	[Specification](#specification)
 1. 	[Tests](#tests)
