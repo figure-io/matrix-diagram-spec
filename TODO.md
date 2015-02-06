@@ -10,6 +10,8 @@ TODO
 7. possibly relax the requirements (e.g., transitions, legend, interactions, settings, brushes)
 	-	what are the core elements which are needed?
 	-	how does this fit in with the `config` method?
+		-	stipulate that a partial object be merged with a spec template
+		-	could handle this internally; always merge and then validate. +1
 8. 
 
 
