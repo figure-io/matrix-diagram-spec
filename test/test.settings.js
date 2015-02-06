@@ -72,7 +72,7 @@ describe( 'general settings', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.settings.autoResize = '';
+			template.settings.autoResize = false;
 			template.settings.autoResize = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
@@ -91,7 +91,7 @@ describe( 'general settings', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.settings.autoUpdate = '';
+			template.settings.autoUpdate = false;
 			template.settings.autoUpdate = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );

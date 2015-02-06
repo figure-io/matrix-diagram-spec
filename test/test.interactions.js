@@ -72,7 +72,7 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.brushable = '';
+			template.interactions.brushable = false;
 			template.interactions.brushable = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
@@ -91,7 +91,7 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.brushableRows = '';
+			template.interactions.brushableRows = false;
 			template.interactions.brushableRows = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
@@ -110,7 +110,7 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.brushableCols = '';
+			template.interactions.brushableCols = false;
 			template.interactions.brushableCols = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
@@ -129,7 +129,7 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.sortableRows = '';
+			template.interactions.sortableRows = false;
 			template.interactions.sortableRows = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
@@ -148,7 +148,7 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.sortableCols = '';
+			template.interactions.sortableCols = false;
 			template.interactions.sortableCols = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
@@ -167,7 +167,7 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.resizable = '';
+			template.interactions.resizable = false;
 			template.interactions.resizable = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
