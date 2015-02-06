@@ -112,7 +112,6 @@ describe( 'canvas', function tests() {
 
 		var padding = template.canvas.padding;
 		for ( var i = 0; i < values.length; i++ ) {
-			console.log( values[ i ] );
 			template.canvas.padding = padding;
 			template.canvas.padding = values[ i ];
 			assert.notOk( spec.validate( template ) );

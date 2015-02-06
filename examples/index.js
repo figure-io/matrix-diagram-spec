@@ -38,8 +38,8 @@ tmpl.data.values = [
 ];
 tmpl.canvas.width = 600;
 tmpl.canvas.height = 400;
-tmpl.axes[ 0 ].label = 'Columns';
-tmpl.axes[ 1 ].label = 'Rows';
+tmpl.axes.x.label = 'Columns';
+tmpl.axes.y.label = 'Rows';
 tmpl.marks[ 0 ].data.name = 'boop';
 tmpl.marks[ 0 ].properties.fill.field = 'a';
 tmpl.marks[ 0 ].properties.fillOpacity.field = 'b';

@@ -51,18 +51,16 @@
 			"range": []
 		}
 	},
-	"axes": [
-		{
-			"type": "x",
+	"axes": {
+		"x": {
 			"scale": "x",
 			"label": ""
 		},
-		{
-			"type": "y",
+		"y": {
 			"scale": "y",
 			"label": ""
 		}
-	],
+	},
 	"marks": [
 		{
 			"name": "",

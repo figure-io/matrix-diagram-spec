@@ -45,14 +45,13 @@
 			"range": {}
 		}
 	},
-	"axes": [
-		false,
-		{
-			"type": [],
+	"axes": {
+		"x": false,
+		"y": {
 			"scale": null,
 			"label": {}
 		}
-	],
+	},
 	"marks": [
 		{
 			"name": [],

@@ -368,10 +368,6 @@
 			"description": "defines a chart axis",
 			"type": "object",
 			"properties": {
-				"type": {
-					"description": "chart axis type",
-					"enum": [ "x", "y" ]
-				},
 				"scale": {
 					"description": "name of corresponding scale",
 					"type": "string"
@@ -382,7 +378,6 @@
 				}
 			},
 			"required": [
-				"type",
 				"scale",
 				"label"
 			]
@@ -594,12 +589,22 @@
 			]
 		},
 		"axes": {
-			"description": "list of chart axes",
-			"type": "array",
-			"items": {
-				"$ref": "#/definitions/axis"
+			"description": "schema for chart axes",
+			"type": "object",
+			"properties": {
+				"x": {
+					"description": "x-axis",
+					"$ref": "#/definitions/axis"
+				},
+				"y": {
+					"description": "y-axis",
+					"$ref": "#/definitions/axis"
+				}
 			},
-			"minItems": 2
+			"required": [
+				"x",
+				"y"
+			]
 		},
 		"marks": {
 			"description": "list of visual encodings associated with chart data",

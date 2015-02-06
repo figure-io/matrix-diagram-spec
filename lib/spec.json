@@ -92,18 +92,16 @@
 			"range": []
 		}
 	},
-	"axes": [
-		{
-			"type": "x",
+	"axes": {
+		"x": {
 			"scale": "x",
 			"label": "{{ x-label }}"
 		},
-		{
-			"type": "y",
+		"y": {
 			"scale": "y",
 			"label": "{{ y-label }}"
 		}
-	],
+	},
 	"marks": [
 		{
 			"name": "{{ mark_name }}",

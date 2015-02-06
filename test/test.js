@@ -51,7 +51,7 @@ describe( 'matrix-diagram-spec', function tests() {
 		assert.isArray( config.data );
 		assert.isArray( config.marks );
 		assert.isObject( config.scales );
-		assert.isArray( config.axes );
+		assert.isObject( config.axes );
 		assert.isObject( config.legend );
 		assert.isObject( config.interactions );
 		assert.isObject( config.transitions );
