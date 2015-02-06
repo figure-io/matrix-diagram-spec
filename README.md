@@ -4,7 +4,21 @@ Matrix Diagram Specification
 
 > JSON specification and validation for [matrix diagrams](https://github.com/figure-io/polymer-matrix-diagram).
 
+---
+1. 	[Installation](#installation)
+1. 	[Usage](#usage)
+	- 	[spec.template](#method-template)
+	-	[spec.validate](#method-validate)
+	-	[spec.errors](#method-errors)
+1. 	[Examples](#examples)
+1. 	[Specification](#specification)
+1. 	[Tests](#tests)
+	-	[Unit](#unit)
+	-	[Coverage](#test-coverage)
+1. 	[License](#license)
 
+
+---
 ### Installation
 
 ``` bash
@@ -20,6 +34,7 @@ var spec = require( 'matrix-diagram-spec' );
 The specification has the following methods...
 
 
+<a name="method-template"></a>
 #### spec.template()
 
 Returns a new [matrix diagram](https://github.com/figure-io/polymer-matrix-diagram) template.
@@ -29,9 +44,10 @@ var template = spec.template();
 // returns {...}
 ```
 
-Modify the template accordingly to generate your desired chart configuration. Once configured, the configuration object should be validated.
+Modify the template to generate your desired chart configuration. Once configured, the configuration object should be validated.
 
 
+<a name="method-validate"></a>
 #### spec.validate( config )
 
 Validates if a configuration object conforms to the [matrix diagram](https://github.com/figure-io/polymer-matrix-diagram) specification.
@@ -57,9 +73,10 @@ var isValid = spec.validate( chart );
 ```
 
 
+<a name="method-errors"></a>
 #### spec.errors()
 
-Returns the list of errors from the most recent validation. If no errors occurred during validation, the list is `null`. Otherwise, the list is an `array`.
+Returns an `array` of errors from the most recent validation. If no errors occurred during validation, the list is `null`.
 
 ``` javascript
 var errs = spec.errors();
