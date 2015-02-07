@@ -4,18 +4,7 @@ Matrix Diagram Specification
 
 > JSON specification and validation for [matrix diagrams](https://github.com/figure-io/polymer-matrix-diagram).
 
----
-1. 	[Specification](#specification)
-1. 	[Installation](#installation)
-1. 	[Usage](#usage)
-1. 	[Examples](#examples)
-1. 	[Tests](#tests)
-	-	[Unit](#unit)
-	-	[Coverage](#test-coverage)
-1. 	[License](#license)
 
-
----
 ### Specification
 
 For specification documentation, consult the [wiki](https://github.com/figure-io/matrix-diagram-spec/wiki).
