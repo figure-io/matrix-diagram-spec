@@ -15,11 +15,7 @@ TODO
 		-	could handle this internally; always merge and then validate. +1
 8. Should `axes` just be an `object`?
 	-	if a chart supports multiple x/y axes, then those axes should be namespaced accordingly; e.g., x1,x2,x3,x4,...,etc. The key name could be just as easily parsed to get the axis type, as reading the `type` key for each array element
-9. Can a list of possible keys be enumerated? `enum` in the schema.
-	-	e.g., for axes, want only `x` and `y` keys
-	-	`additionalProperties:false`
-	-	`minProperties:2`
-	-	`maxProperties:2`
+9. 
 10. should a `title` field be required in `meta`?
 11. 
 
@@ -51,6 +47,8 @@ TODO
 	-	axes.y
 	-	data
 	-	marks
+	-	marks[0].type
+	-	marks[0].data.name
 	-	type (matrix-diagram)
 	-	legend.fill
 	-	legend.fillOpacity
