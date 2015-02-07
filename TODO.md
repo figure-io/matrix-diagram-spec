@@ -27,9 +27,30 @@ TODO
 ### Tests
 
 1. scales
+	- `test.scales.js`: issue #14
 2. axes
 	- `test.axes.js`: issue #14
 3. marks
 4. brushes
 5. legend
 	- `test.legend.js`: issue #14
+
+
+### Notes
+
+1. Mandatory config: what would be the minimal amt of config someone would need to know to create a static graphic which is visually encoded the same?
+	-	canvas.width
+	-	canvas.height
+	-	canvas.padding (all)
+	-	scales.x
+	- 	scales.y
+	-	scales.z
+	-	scales.color
+	-	axes.x
+	-	axes.y
+	-	data
+	-	marks
+	-	type (matrix-diagram)
+	-	legend.fill
+	-	legend.fillOpacity
+2. Defn of `meta`: information associated with a data graphic, but not essential for understanding the graph itself (e.g., axes, marks, labels)

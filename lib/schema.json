@@ -570,7 +570,7 @@
 				},
 				"y": {
 					"description": "scale mapping rows to pixel values",
-					"$ref": "#/defintions/yScale"
+					"$ref": "#/definitions/yScale"
 				},
 				"z": {
 					"description": "scale mapping data values to fill opacities",
