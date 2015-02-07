@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'brushes', function tests() {
 
 	it( 'should invalidate a chart configuration without a brushes field', function test() {
 		template.brushes = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid brushes field (non-object)', function test() {
@@ -56,14 +56,14 @@ describe( 'brushes', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.brushes = brushes;
 			template.brushes = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should not require `x` and `y` fields', function test() {
 		template.brushes = {};
-		assert.ok( spec.validate( template ) );
+		assert.ok( validate( template ) );
 	});
 
 });

@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -50,8 +50,8 @@ describe( 'y-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.y = scale;
 			template.scales.y = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -70,8 +70,8 @@ describe( 'y-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.y.type = 'ordinal';
 			template.scales.y.type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -89,8 +89,8 @@ describe( 'y-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.y.description = '';
 			template.scales.y.description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -108,8 +108,8 @@ describe( 'y-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.y.domain = [];
 			template.scales.y.domain = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -128,22 +128,22 @@ describe( 'y-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.y.range = 'height';
 			template.scales.y.range = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require `type`, `domain`, and `range` fields', function test() {
 		template.scales.y.type = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.y.type = 'ordinal';
 
 		template.scales.y.domain = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.y.domain = [];
 
 		template.scales.y.range = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.y.range = 'height';
 	});
 

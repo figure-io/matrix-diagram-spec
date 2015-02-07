@@ -1,6 +1,6 @@
 'use strict';
 
-var spec = require( './../lib' ),
+var validate = require( './../lib' ),
 	goodChart,
 	badChart,
 	isValid,
@@ -11,16 +11,16 @@ goodChart = require( './good.json' );
 badChart = require( './bad.json' );
 
 // Validate:
-isValid = spec.validate( goodChart );
-console.log( 'Valid: ' + isValid );
-console.log( spec.errors() );
+isValid = validate( goodChart );
+console.log( '\nValid: ' + isValid );
+console.log( validate.errors );
 
-isValid = spec.validate( badChart );
-console.log( 'Valid: ' + isValid );
-console.dir( spec.errors() );
+isValid = validate( badChart );
+console.log( '\nValid: ' + isValid );
+console.dir( validate.errors );
 
 // Create a new configuration from a template:
-tmpl = spec.template();
+tmpl = validate.template();
 
 tmpl.name = 'Beep';
 tmpl.data.name = 'boop';
@@ -47,6 +47,6 @@ tmpl.interactions.brushable = true;
 tmpl.interactions.sortableRows = true;
 tmpl.interactions.sortableCols = false;
 
-isValid = spec.validate( tmpl );
-console.log( 'Valid: ' + isValid );
-console.log( spec.errors() );
+isValid = validate( tmpl );
+console.log( '\nValid: ' + isValid );
+console.log( validate.errors );

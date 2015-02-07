@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'configuration name', function tests() {
 
 it( 'should invalidate a chart configuration without a name field', function test() {
 		template.name = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid chart name (non-string)', function test() {
@@ -55,8 +55,8 @@ it( 'should invalidate a chart configuration without a name field', function tes
 		for ( var i = 0; i < values.length; i++ ) {
 			template.name = '';
 			template.name = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 

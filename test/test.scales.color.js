@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -50,8 +50,8 @@ describe( 'color-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.color = scale;
 			template.scales.color = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -70,8 +70,8 @@ describe( 'color-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.color.type = 'ordinal';
 			template.scales.color.type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -89,8 +89,8 @@ describe( 'color-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.color.description = '';
 			template.scales.color.description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -109,8 +109,8 @@ describe( 'color-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.color.domain = domain;
 			template.scales.color.domain = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -127,8 +127,8 @@ describe( 'color-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.color.domain.min = null;
 			template.scales.color.domain.min = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -145,8 +145,8 @@ describe( 'color-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.color.domain.max = null;
 			template.scales.color.domain.max = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -164,8 +164,8 @@ describe( 'color-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.color.range = [];
 			template.scales.color.range = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -173,26 +173,26 @@ describe( 'color-scale', function tests() {
 		var val;
 
 		template.scales.color.type = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.color.type = 'ordinal';
 
 		val = template.scales.color.domain;
 		template.scales.color.domain = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.color.domain = val;
 
 		template.scales.color.range = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.color.range = [];
 	});
 
 	it( 'should require `min` and `max` domain fields', function test() {
 		template.scales.color.domain.min = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.color.domain.min = null;
 
 		template.scales.color.domain.max = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.color.domain.max = null;
 	});
 

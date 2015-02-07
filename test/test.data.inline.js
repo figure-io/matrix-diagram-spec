@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -49,8 +49,8 @@ describe( 'data inline', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 0 ].name = '';
 			template.data[ 0 ].name = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -68,8 +68,8 @@ describe( 'data inline', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 0 ].description = '';
 			template.data[ 0 ].description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -87,8 +87,8 @@ describe( 'data inline', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 0 ].rownames = [];
 			template.data[ 0 ].rownames = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -106,8 +106,8 @@ describe( 'data inline', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 0 ].colnames = [];
 			template.data[ 0 ].colnames = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -127,8 +127,8 @@ describe( 'data inline', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 0 ].values = [[]];
 			template.data[ 0 ].values = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -147,8 +147,8 @@ describe( 'data inline', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 0 ].transforms = [{'type':''}];
 			template.data[ 0 ].transforms = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -166,26 +166,26 @@ describe( 'data inline', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 0 ].transforms[ 0 ].type = '';
 			template.data[ 0 ].transforms[ 0 ].type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require `name`, `rownames`, `colnames`, and `values` fields', function test() {
 		template.data[ 0 ].name = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 0 ].name = '';
 
 		template.data[ 0 ].rownames = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 0 ].rownames = [];
 
 		template.data[ 0 ].colnames = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 0 ].colnames = [];
 
 		template.data[ 0 ].values = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 0 ].values = [[]];
 	});
 

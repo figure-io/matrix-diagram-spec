@@ -26,27 +26,14 @@ $ npm install matrix-diagram-spec
 ### Usage
 
 ``` javascript
-var spec = require( 'matrix-diagram-spec' );
+var validate = require( 'matrix-diagram-spec' );
 ```
 
-The specification has the following methods...
-
-
-<a name="method-template"></a>
-#### spec.template()
-
-Returns a new [matrix diagram](https://github.com/figure-io/polymer-matrix-diagram) template.
-
-``` javascript
-var template = spec.template();
-// returns {...}
-```
-
-Modify the template to generate your desired chart configuration. Once configured, the configuration object should be validated.
+The specification has the following attributes and methods...
 
 
 <a name="method-validate"></a>
-#### spec.validate( config )
+#### validate( config )
 
 Validates if a configuration object conforms to the [matrix diagram](https://github.com/figure-io/polymer-matrix-diagram) specification.
 
@@ -66,18 +53,30 @@ var chart = {
 	...
 };
 
-var isValid = spec.validate( chart );
+var isValid = validate( chart );
 // returns `boolean`
 ```
 
+<a name="method-template"></a>
+#### validate.template()
 
-<a name="method-errors"></a>
-#### spec.errors()
-
-Returns an `array` of errors from the most recent validation. If no errors occurred during validation, the list is `null`.
+Returns a new [matrix diagram](https://github.com/figure-io/polymer-matrix-diagram) template.
 
 ``` javascript
-var errs = spec.errors();
+var template = validate.template();
+// returns {...}
+```
+
+Modify the template to generate your desired chart configuration. Once configured, the configuration object should be validated.
+
+
+<a name="attr-errors"></a>
+#### validate.errors
+
+An `array` of errors from the most recent validation. If no errors occurred during validation, the list is `null`.
+
+``` javascript
+var errs = validator.errors;
 ```
 
 
@@ -85,7 +84,7 @@ var errs = spec.errors();
 ### Examples
 
 ``` javascript
-var spec = require( 'matrix-diagram-spec' ),
+var validate = require( 'matrix-diagram-spec' ),
 	goodChart,
 	badChart,
 	isValid,
@@ -96,14 +95,14 @@ goodChart = require( './examples/good.json' );
 badChart = require( './examples/bad.json' );
 
 // Validate:
-isValid = spec.validate( goodChart );
-console.log( spec.errors() );
+isValid = validate( goodChart );
+console.log( validate.errors );
 
-isValid = spec.validate( badChart );
-console.dir( spec.errors() );
+isValid = validate( badChart );
+console.dir( validate.errors );
 
 // Create a new configuration from a template:
-tmpl = spec.template();
+tmpl = validate.template();
 
 tmpl.name = 'Beep';
 tmpl.data.name = 'boop';
@@ -130,8 +129,8 @@ tmpl.interactions.brushable = true;
 tmpl.interactions.sortableRows = true;
 tmpl.interactions.sortableCols = false;
 
-isValid = spec.validate( tmpl );
-console.log( spec.errors() );
+isValid = validate( tmpl );
+console.log( validate.errors );
 ```
 
 To run the example code from the top-level application directory,
@@ -144,6 +143,10 @@ $ node ./examples/index.js
 ---
 ## Specification
 
+Mandatory fields are indicated with asterisks (`*`).
+
+
+#### 
 
 
 <a name="spec-examples"></a>

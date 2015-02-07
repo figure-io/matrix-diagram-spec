@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'axes', function tests() {
 
 	it( 'should invalidate a chart configuration without an axes field', function test() {
 		template.axes = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid axes field (non-object)', function test() {
@@ -56,8 +56,8 @@ describe( 'axes', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.axes = axes;
 			template.axes = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -67,12 +67,12 @@ describe( 'axes', function tests() {
 
 		axis = template.axes.x;
 		template.axes.x = null;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.axes.x = axis;
 
 		axis = template.axes.y;
 		template.axes.y = null;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.axes.y = axis;
 	});
 

@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -50,8 +50,8 @@ describe( 'legend entry: fillOpacity', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.legend.fillOpacity = fillOpacity;
 			template.legend.fillOpacity = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -69,14 +69,14 @@ describe( 'legend entry: fillOpacity', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.legend.fillOpacity.label = '';
 			template.legend.fillOpacity.label = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require a `label` field', function test() {
 		template.legend.fillOpacity.label = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.legend.fillOpacity.label = '';
 	});
 

@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -49,8 +49,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].name = '';
 			template.marks[ 0 ].name = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -68,8 +68,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].type = 'rect';
 			template.marks[ 0 ].type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -87,8 +87,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].description = '';
 			template.marks[ 0 ].description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -107,8 +107,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].data = data;
 			template.marks[ 0 ].data = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -126,8 +126,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].data.name = '';
 			template.marks[ 0 ].data.name = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -146,8 +146,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].data.transforms = [{'type':''}];
 			template.marks[ 0 ].data.transforms = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -165,8 +165,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].data.transforms[ 0 ].type = '';
 			template.marks[ 0 ].data.transforms[ 0 ].type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -185,8 +185,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].properties = props;
 			template.marks[ 0 ].properties = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -205,8 +205,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].properties.fill = fill;
 			template.marks[ 0 ].properties.fill = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -225,8 +225,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].properties.fill.scale = 'color';
 			template.marks[ 0 ].properties.fill.scale = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -243,8 +243,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].properties.fill.field = '';
 			template.marks[ 0 ].properties.fill.field = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -263,8 +263,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].properties.fillOpacity = opacity;
 			template.marks[ 0 ].properties.fillOpacity = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -283,8 +283,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].properties.fillOpacity.scale = 'z';
 			template.marks[ 0 ].properties.fillOpacity.scale = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -301,8 +301,8 @@ describe( 'mark', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.marks[ 0 ].properties.fillOpacity.field = '';
 			template.marks[ 0 ].properties.fillOpacity.field = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -310,29 +310,29 @@ describe( 'mark', function tests() {
 		var val;
 
 		template.marks[ 0 ].type = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.marks[ 0 ].type = 'rect';
 
 		val = template.marks[ 0 ].data;
 		template.marks[ 0 ].data = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.marks[ 0 ].data = val;
 
 		val = template.marks[ 0 ].properties;
 		template.marks[ 0 ].properties = undefined;
-		assert.ok( spec.validate( template ) );
+		assert.ok( validate( template ) );
 		template.marks[ 0 ].properties = val;
 	});
 
 	it( 'should require a data `name`', function test() {
 		template.marks[ 0 ].data.name = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.marks[ 0 ].data.name = '';
 	});
 
 	xit( 'should not require `fill` and `fillOpacity` properties', function test() {
 		template.marks[ 0 ].properties = {};
-		assert.ok( spec.validate( template ) );
+		assert.ok( validate( template ) );
 	});
 
 });

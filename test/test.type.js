@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'configuration type', function tests() {
 
 	it( 'should invalidate a chart configuration without a type field', function test() {
 		template.type = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid chart type (non-string)', function test() {
@@ -56,8 +56,8 @@ describe( 'configuration type', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.type = '';
 			template.type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 

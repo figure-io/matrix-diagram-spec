@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'legend', function tests() {
 
 	it( 'should invalidate a chart configuration without a legend field', function test() {
 		template.legend = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid legend field (non-object)', function test() {
@@ -56,15 +56,15 @@ describe( 'legend', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.legend = legend;
 			template.legend = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	// TODO: unhide once IMJV issue #14 resolved
 	xit( 'should not require any particular fields', function test() {
 		template.legend = {};
-		assert.ok( spec.validate( template ) );
+		assert.ok( validate( template ) );
 	});
 
 });

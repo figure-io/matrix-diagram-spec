@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'interactions', function tests() {
 
 	it( 'should invalidate a chart configuration without a interactions field', function test() {
 		template.interactions = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid interactions field (non-object)', function test() {
@@ -55,8 +55,8 @@ describe( 'interactions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.interactions = {};
 			template.interactions = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -74,8 +74,8 @@ describe( 'interactions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.interactions.brushable = false;
 			template.interactions.brushable = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -93,8 +93,8 @@ describe( 'interactions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.interactions.brushableRows = false;
 			template.interactions.brushableRows = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -112,8 +112,8 @@ describe( 'interactions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.interactions.brushableCols = false;
 			template.interactions.brushableCols = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -131,8 +131,8 @@ describe( 'interactions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.interactions.sortableRows = false;
 			template.interactions.sortableRows = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -150,8 +150,8 @@ describe( 'interactions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.interactions.sortableCols = false;
 			template.interactions.sortableCols = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -169,14 +169,14 @@ describe( 'interactions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.interactions.resizable = false;
 			template.interactions.resizable = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should not require any particular fields', function test() {
 		template.interactions = {};
-		assert.ok( spec.validate( template ) );
+		assert.ok( validate( template ) );
 	});
 
 });

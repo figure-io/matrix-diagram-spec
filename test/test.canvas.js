@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'canvas', function tests() {
 
 	it( 'should invalidate a chart configuration without a canvas field', function test() {
 		template.canvas = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid canvas field (non-object)', function test() {
@@ -56,8 +56,8 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas = canvas;
 			template.canvas = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -75,8 +75,8 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas.width = 0;
 			template.canvas.width = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -94,8 +94,8 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas.height = 0;
 			template.canvas.height = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -114,8 +114,8 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas.padding = padding;
 			template.canvas.padding = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -133,8 +133,8 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas.padding.left = 0;
 			template.canvas.padding.left = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -152,8 +152,8 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas.padding.right = 0;
 			template.canvas.padding.right = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -171,8 +171,8 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas.padding.bottom = 0;
 			template.canvas.padding.bottom = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -190,40 +190,40 @@ describe( 'canvas', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.canvas.padding.top = 0;
 			template.canvas.padding.top = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require `width`, `height`, and `padding` fields', function test() {
 		template.canvas.width = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.canvas.width = null;
 
 		template.canvas.height = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.canvas.height = null;
 
 		template.canvas.padding = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.canvas.padding = null;
 	});
 
 	it( 'should require `left`, `right`, `top`, and `bottom` padding fields', function test() {
 		template.canvas.padding.left = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.canvas.padding.left = null;
 
 		template.canvas.padding.right = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.canvas.padding.right = null;
 
 		template.canvas.padding.top = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.canvas.padding.top = null;
 
 		template.canvas.padding.bottom = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.canvas.padding.bottom = null;
 	});
 

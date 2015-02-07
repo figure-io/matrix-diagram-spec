@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'general settings', function tests() {
 
 	it( 'should invalidate a chart configuration without a settings field', function test() {
 		template.settings = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid settings field (non-object)', function test() {
@@ -55,8 +55,8 @@ describe( 'general settings', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.settings = {};
 			template.settings = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -74,8 +74,8 @@ describe( 'general settings', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.settings.autoResize = false;
 			template.settings.autoResize = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -93,14 +93,14 @@ describe( 'general settings', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.settings.autoUpdate = false;
 			template.settings.autoUpdate = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should not require any particular settings', function test() {
 		template.settings = {};
-		assert.ok( spec.validate( template ) );
+		assert.ok( validate( template ) );
 	});
 
 });

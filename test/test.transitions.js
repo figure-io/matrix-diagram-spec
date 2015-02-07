@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'transitions', function tests() {
 
 	it( 'should invalidate a chart configuration without a transitions field', function test() {
 		template.transitions = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid transitions field (non-object)', function test() {
@@ -55,8 +55,8 @@ describe( 'transitions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.transitions = {};
 			template.transitions = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -74,14 +74,14 @@ describe( 'transitions', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.transitions.duration = 2500;
 			template.transitions.duration = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should not require any particular fields', function test() {
 		template.transitions = {};
-		assert.ok( spec.validate( template ) );
+		assert.ok( validate( template ) );
 	});
 
 });

@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,16 +37,16 @@ describe( 'matrix-diagram-spec', function tests() {
 		template = JSON.parse( tmpl );
 	});
 
-	it( 'should export an object', function test() {
-		expect( spec ).to.be.an( 'object' );
+	it( 'should export a function', function test() {
+		expect( validate ).to.be.a( 'function' );
 	});
 
 	it( 'should provide a method to create a new configuration template', function test() {
-		expect( spec.template ).to.be.a( 'function' );
+		expect( validate.template ).to.be.a( 'function' );
 	});
 
 	it( 'should return a matrix diagram configuration object', function test() {
-		var config = spec.template();
+		var config = validate.template();
 		assert.isObject( config );
 		assert.isArray( config.data );
 		assert.isArray( config.marks );
@@ -57,45 +57,15 @@ describe( 'matrix-diagram-spec', function tests() {
 		assert.isObject( config.transitions );
 	});
 
-	it( 'should provide a method to validate a chart configuration', function test() {
-		expect( spec.validate ).to.be.a( 'function' );
-	});
-
-	it( 'should throw an error if provided a chart configuration which is not an object', function test() {
-		var values = [
-			5,
-			true,
-			undefined,
-			null,
-			NaN,
-			function(){},
-			[],
-			'beep'
-		];
-
-		for ( var i = 0; i < values.length; i++ ) {
-			expect( badValue( values[i] ) ).to.throw( TypeError );
-		}
-		function badValue( value ) {
-			return function() {
-				spec.validate( value );
-			};
-		}
-	});
-
-	it( 'should provide a method to access the most recent validation errors', function test() {
-		expect( spec.errors ).to.be.a( 'function' );
-	});
-
 	it( 'should properly validate chart configurations', function test() {
 		var isValid;
 
 		// Good configuration:
-		isValid = spec.validate( goodConfig );
+		isValid = validate( goodConfig );
 		assert.ok( isValid );
 
 		// Bad configuration:
-		isValid = spec.validate( badConfig );
+		isValid = validate( badConfig );
 		assert.notOk( isValid );
 	});
 

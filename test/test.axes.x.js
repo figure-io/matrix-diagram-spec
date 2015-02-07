@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -50,8 +50,8 @@ describe( 'x-axis', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.axes.x = axis;
 			template.axes.x = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -69,8 +69,8 @@ describe( 'x-axis', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.axes.x.scale = '';
 			template.axes.x.scale = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -88,18 +88,18 @@ describe( 'x-axis', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.axes.x.label = '';
 			template.axes.x.label = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require `scale` and `label` fields', function test() {
 		template.axes.x.scale = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.axes.x.scale = '';
 
 		template.axes.x.label = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.axes.x.label = '';
 	});
 

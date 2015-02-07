@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -50,8 +50,8 @@ describe( 'y-brush', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.brushes.y = brush;
 			template.brushes.y = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -70,8 +70,8 @@ describe( 'y-brush', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.brushes.y.data = data;
 			template.brushes.y.data = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -89,8 +89,8 @@ describe( 'y-brush', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.brushes.y.data.name = '';
 			template.brushes.y.data.name = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -109,8 +109,8 @@ describe( 'y-brush', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.brushes.y.data.transforms = [{'type':''}];
 			template.brushes.y.data.transforms = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -128,21 +128,21 @@ describe( 'y-brush', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.brushes.y.data.transforms[ 0 ].type = '';
 			template.brushes.y.data.transforms[ 0 ].type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require a `data` field', function test() {
 		var val = template.brushes.y.data;
 		template.brushes.y.data = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.brushes.y.data = val;
 	});
 
 	it( 'should require a data name', function test() {
 		template.brushes.y.data.name = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 	});
 
 });

@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -50,8 +50,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z = scale;
 			template.scales.z = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -70,8 +70,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.type = 'linear';
 			template.scales.z.type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -89,8 +89,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.description = '';
 			template.scales.z.description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -109,8 +109,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.domain = domain;
 			template.scales.z.domain = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -127,8 +127,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.domain.min = null;
 			template.scales.z.domain.min = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -145,8 +145,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.domain.max = null;
 			template.scales.z.domain.max = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -165,8 +165,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.range = range;
 			template.scales.z.range = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -185,8 +185,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.range.min = 0;
 			template.scales.z.range.min = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -205,8 +205,8 @@ describe( 'z-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.z.range.max = 1;
 			template.scales.z.range.max = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -214,37 +214,37 @@ describe( 'z-scale', function tests() {
 		var val;
 
 		template.scales.z.type = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z.type = 'linear';
 
 		val = template.scales.z.domain;
 		template.scales.z.domain = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z.domain = val;
 
 		val = template.scales.z.range;
 		template.scales.z.range = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z.range = val;
 	});
 
 	it( 'should require `min` and `max` domain fields', function test() {
 		template.scales.z.domain.min = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z.domain.min = null;
 
 		template.scales.z.domain.max = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z.domain.max = null;
 	});
 
 	it( 'should require `min` and `max` range fields', function test() {
 		template.scales.z.range.min = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z.range.min = null;
 
 		template.scales.z.range.max = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z.range.max = null;
 	});
 

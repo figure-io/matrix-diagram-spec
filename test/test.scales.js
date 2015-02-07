@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -37,8 +37,8 @@ describe( 'scales', function tests() {
 
 	it( 'should invalidate a chart configuration without a scales field', function test() {
 		template.scales = undefined;
-		assert.notOk( spec.validate( template ) );
-		assert.strictEqual( spec.errors().length, 1 );
+		assert.notOk( validate( template ) );
+		assert.strictEqual( validate.errors.length, 1 );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid scales field (non-object)', function test() {
@@ -56,8 +56,8 @@ describe( 'scales', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales = scales;
 			template.scales = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -67,22 +67,22 @@ describe( 'scales', function tests() {
 
 		scale = template.scales.x;
 		template.scales.x = null;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.x = scale;
 
 		scale = template.scales.y;
 		template.scales.y = null;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.y = scale;
 
 		scale = template.scales.z;
 		template.scales.z = null;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.z = scale;
 
 		scale = template.scales.color;
 		template.scales.color = null;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.color = scale;
 	});
 

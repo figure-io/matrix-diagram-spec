@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -49,8 +49,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].name = '';
 			template.data[ 1 ].name = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -68,8 +68,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].description = '';
 			template.data[ 1 ].description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -88,8 +88,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].transforms = [{'type':''}];
 			template.data[ 1 ].transforms = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -107,8 +107,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].transforms[ 0 ].type = '';
 			template.data[ 1 ].transforms[ 0 ].type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -128,8 +128,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].url = '';
 			template.data[ 1 ].url = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -148,8 +148,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].format = fmt;
 			template.data[ 1 ].format = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -168,8 +168,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].format.type = 'json';
 			template.data[ 1 ].format.type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -188,8 +188,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].format.fields = fields;
 			template.data[ 1 ].format.fields = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -207,8 +207,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].format.fields.rownames = '';
 			template.data[ 1 ].format.fields.rownames = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -226,8 +226,8 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].format.fields.colnames = '';
 			template.data[ 1 ].format.fields.colnames = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -245,24 +245,24 @@ describe( 'data url', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 1 ].format.fields.values = '';
 			template.data[ 1 ].format.fields.values = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require `name` and `url` fields', function test() {
 		template.data[ 1 ].name = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 1 ].name = '';
 
 		template.data[ 1 ].url = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 1 ].url = 'http://127.0.0.1';
 	});
 
 	it( 'should require a format type', function test() {
 		template.data[ 1 ].format.type = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 	});
 
 });

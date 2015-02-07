@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -49,8 +49,8 @@ describe( 'data source', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 2 ].name = '';
 			template.data[ 2 ].name = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -68,8 +68,8 @@ describe( 'data source', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 2 ].description = '';
 			template.data[ 2 ].description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -88,8 +88,8 @@ describe( 'data source', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 2 ].transforms = [{'type':''}];
 			template.data[ 2 ].transforms = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -107,8 +107,8 @@ describe( 'data source', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 2 ].transforms[ 0 ].type = '';
 			template.data[ 2 ].transforms[ 0 ].type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -126,18 +126,18 @@ describe( 'data source', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.data[ 2 ].source = '';
 			template.data[ 2 ].source = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require `name` and `source` fields', function test() {
 		template.data[ 2 ].name = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 2 ].name = '';
 
 		template.data[ 2 ].source = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.data[ 2 ].source = '';
 	});
 

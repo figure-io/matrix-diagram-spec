@@ -7,7 +7,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	spec = require( './../lib' );
+	validate = require( './../lib' );
 
 
 // VARIABLES //
@@ -50,8 +50,8 @@ describe( 'x-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.x = scale;
 			template.scales.x = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -70,8 +70,8 @@ describe( 'x-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.x.type = 'ordinal';
 			template.scales.x.type = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -89,8 +89,8 @@ describe( 'x-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.x.description = '';
 			template.scales.x.description = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -108,8 +108,8 @@ describe( 'x-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.x.domain = [];
 			template.scales.x.domain = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
@@ -128,22 +128,22 @@ describe( 'x-scale', function tests() {
 		for ( var i = 0; i < values.length; i++ ) {
 			template.scales.x.range = 'width';
 			template.scales.x.range = values[ i ];
-			assert.notOk( spec.validate( template ) );
-			assert.strictEqual( spec.errors().length, 1 );
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should require `type`, `domain`, and `range` fields', function test() {
 		template.scales.x.type = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.x.type = 'ordinal';
 
 		template.scales.x.domain = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.x.domain = [];
 
 		template.scales.x.range = undefined;
-		assert.notOk( spec.validate( template ) );
+		assert.notOk( validate( template ) );
 		template.scales.x.range = 'width';
 	});
 
