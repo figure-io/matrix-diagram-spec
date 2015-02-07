@@ -9,6 +9,15 @@ Matrix Diagram Specification
 1. 	[Usage](#usage)
 	- 	[Examples](#usage-examples)
 1. 	[Specification](#specification)
+	-	[name](#spec-name)
+	-	[type](#spec-type)
+	-	[meta](#spec-meta)
+		*	[title](#spec-meta-title)
+		*	[description](#spec-meta-description)
+	-	[data](#spec-data)
+		*	[inline](#spec-data-inline)
+		*	[url](#spec-data-url)
+		*	[source](#spec-data-source)
 	-	[Examples](#spec-examples)
 1. 	[Tests](#tests)
 	-	[Unit](#unit)
@@ -323,7 +332,7 @@ var spec = {
 };
 ```
 
-
+<a name="spec-name"></a>
 #### spec.name
 
 A unique chart specification `name`. The value should be a `string` and should serve as a unique identifier for the specification.
@@ -335,6 +344,7 @@ spec.name = 'matrix-diagram-1234';
 TODO: consider replacing this with `id`.
 
 
+<a name="spec-type"></a>
 #### spec.type
 
 The chart specification `type`. The only accepted value for a matrix diagram specification is `matrix-diagram`. Providing this field unambiguously indicates that the specification applies to matrix diagrams.
@@ -344,11 +354,13 @@ spec.type = 'matrix-diagram';
 ```
 
 
+<a name="spec-meta"></a>
 #### spec.meta
 
 The `meta` field includes any information associated with a matrix diagram that is not essential for understanding the diagram itself. For example, a diagram `title` and `description`, while possibly useful in placing the diagram in context, are not essential for reading and understanding the diagram.
 
 
+<a name="spec-meta-title"></a>
 #### spec.meta.title
 
 [__optional__] The matrix diagram `title`. The value should be a `string`. 
@@ -360,6 +372,7 @@ spec.meta.title = 'My Matrix Diagram';
 Note: as the chart `title` is optional, a matrix diagram generator may choose not to support its inclusion in the generated graphic.
 
 
+<a name="spec-meta-description"></a>
 #### spec.meta.description
 
 [__optional__] A description of the diagram and its contents. A common use for the description would be as a figure caption. The value should be a `string`.
@@ -371,9 +384,104 @@ spec.meta.description = 'This diagram provides an alternative to force diagrams 
 Note: as the chart `description` is optional, a matrix diagram generator may choose not to support its inclusion in the generated graphic.
 
 
+<a name="spec-data"></a>
 #### spec.data
 
-The `data` field specifies the data sources from which to generate the matrix diagram. The specification may include multiple data sources, each of a different type.
+The `data` field specifies the data sources from which to generate the matrix diagram. The value must be an `array`.
+
+The specification may include multiple data sources, each of a different type. The following types are permitted...
+
+
+<a name="spec-data-inline"></a>
+##### inline
+
+An inline data source embeds diagram data directly in the matrix diagram specification.
+
+``` javascript
+var data = spec.data[ i ];
+```
+
+<a name="spec-data-inline-name"></a>
+###### data.name
+
+A unique `name` for the data. The `name` must be a `string` and will be referenced by other specification elements.
+
+``` javascript
+data.name = '1234';
+```
+
+<a name="spec-data-inline-desc"></a>
+###### data.description
+
+[__optional__] A description of the data. The `description` must be a `string`.
+
+``` javascript
+data.description = 'Data collected on 02-06-2014 20:31:53. Cross-correlation matrix between individuals in cohort X and individuals in cohort Y.';
+```
+
+<a name="spec-data-inline-rownames"></a>
+###### data.rownames
+
+An `array` of row names. If set to an empty `array`, diagram generators should assign the row index as the row name.
+
+``` javascript
+data.rownames = [ 'f', 'g', 'h' ];
+```
+
+
+<a name="spec-data-inline-colnames"></a>
+###### data.colnames
+
+An `array` of column names. If set to an empty `array`, diagram generators should assign the column index as the column name.
+
+``` javascript
+data.colnames = [ 'foo', 'bar', 'baz', 'buzz' ];
+```
+
+
+<a name="spec-data-inline-values"></a>
+###### data.values
+
+An `array` of `arrays`, where each nested `array` corresponds to a row. Each element within a row corresponds to a column.
+
+``` javascript
+data.values = [
+	[
+		{'a': 1, 'b': 0.5},
+		{'a': 0, 'b': 0.25},
+		{'a': 1, 'b': 0.17},
+		{'a': 1, 'b': 0.52}
+	],
+	[
+		{'a': 1, 'b': 0.2},
+		{'a': 1, 'b': 0.63},
+		{'a': 1, 'b': 0.80},
+		{'a': 0, 'b': 0.4}
+	],
+	[
+		{'a': 0, 'b': 0.21},
+		{'a': 0, 'b': 0.3},
+		{'a': 1, 'b': 0.99},
+		{'a': 0, 'b': 1}
+	]
+];
+```
+
+<a name="spec-data-inline-transforms"></a>
+###### data.transforms
+
+[__optional__] An `array` of transformations to apply to the data. Each transform should be an `object` with a `type` field, indicating the type of transform to be performed.
+
+``` javascript
+data.transforms = [
+	{'type': 'transform1',...},
+	{'type': 'transform2',...},
+	...
+];
+```
+
+Note: transforms are generator/data-pipeline specific. Transform parameters required in the transformation object will be particular to the transform and should be determined from the relevant transform documentation.
+
 
 
 
