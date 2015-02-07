@@ -32,7 +32,7 @@ TODO
 	- `test.axes.js`: issue #14
 3. marks
 	- `test.marks.mark.js`: issue #14
-4. brushes
+4. 
 5. legend
 	- `test.legend.js`: issue #14
 
