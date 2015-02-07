@@ -303,11 +303,13 @@
 						"min": {
 							"description": "minimum fill opacity",
 							"type": "number",
-							"minimum": 0
+							"minimum": 0,
+							"maximum": 1
 						},
 						"max": {
 							"description": "maximum fill opacity",
 							"type": "number",
+							"minimum": 0,
 							"maximum": 1
 						}
 					},
