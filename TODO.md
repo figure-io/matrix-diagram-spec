@@ -15,7 +15,7 @@ TODO
 		-	could handle this internally; always merge and then validate. +1
 8. Should `axes` just be an `object`?
 	-	if a chart supports multiple x/y axes, then those axes should be namespaced accordingly; e.g., x1,x2,x3,x4,...,etc. The key name could be just as easily parsed to get the axis type, as reading the `type` key for each array element
-9. 
+9. `name` or `id`?
 10. should a `title` field be required in `meta`?
 11. 
 

@@ -143,10 +143,64 @@ $ node ./examples/index.js
 ---
 ## Specification
 
-Mandatory fields are indicated with asterisks (`*`).
+All fields are mandatory unless stated otherwise.
+
+``` javascript
+var spec = {};
+```
 
 
-#### 
+#### spec.name
+
+A unique chart specification `name`. The value should be a `string` and serve as a unique identifier for the specification.
+
+``` javascript
+spec.name = 'matrix-diagram-1234';
+```
+
+TODO: consider replacing this with `id`.
+
+
+#### spec.type
+
+The chart specification `type`. The only accepted value for a matrix diagram specification is `matrix-diagram`. Providing this field unambiguously indicates that the specification applies to matrix diagrams.
+
+``` javascript
+spec.type = 'matrix-diagram';
+```
+
+
+#### spec.meta
+
+The `meta` field includes any information associated with a matrix diagram that is not essential for understanding the diagram itself. A diagram `title` and `description`, while possibly useful in placing the diagram in context, are not essential for reading and understanding the diagram.
+
+
+#### spec.meta.title
+
+[optional] The matrix diagram `title`. The value should be a `string`. 
+
+``` javascript
+spec.meta.title = 'My Matrix Diagram';
+```
+
+Note: as the chart `title` is optional, a matrix diagram generator may choose not to support its inclusion in the generated graphic.
+
+
+#### spec.meta.description
+
+[optional] A description of the diagram and its contents. A common use for the description would be as a figure caption. The value should be a `string`.
+
+``` javascript
+spec.meta.description = 'This diagram provides an alternative to force diagrams when displaying network data.';
+```
+
+Note: as the chart `description` is optional, a matrix diagram generator may choose not to support its inclusion in the generated graphic.
+
+
+#### spec.data
+
+The `data` field specifies the data sources from which to generate the matrix diagram. The specification may include multiple data sources, each of a different type.
+
 
 
 <a name="spec-examples"></a>

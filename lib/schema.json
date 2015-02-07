@@ -498,7 +498,7 @@
 			"enum": [ "matrix-diagram" ]
 		},
 		"meta": {
-			"description": "associated chart meta data which aids in the contextual understanding of the chart itself",
+			"description": "associated chart meta data which aids in the contextual understanding of the chart",
 			"type": "object",
 			"properties": {
 				"title": {
