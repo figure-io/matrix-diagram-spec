@@ -152,7 +152,7 @@ var spec = {};
 
 #### spec.name
 
-A unique chart specification `name`. The value should be a `string` and serve as a unique identifier for the specification.
+A unique chart specification `name`. The value should be a `string` and should serve as a unique identifier for the specification.
 
 ``` javascript
 spec.name = 'matrix-diagram-1234';
@@ -172,12 +172,12 @@ spec.type = 'matrix-diagram';
 
 #### spec.meta
 
-The `meta` field includes any information associated with a matrix diagram that is not essential for understanding the diagram itself. A diagram `title` and `description`, while possibly useful in placing the diagram in context, are not essential for reading and understanding the diagram.
+The `meta` field includes any information associated with a matrix diagram that is not essential for understanding the diagram itself. For example, a diagram `title` and `description`, while possibly useful in placing the diagram in context, are not essential for reading and understanding the diagram.
 
 
 #### spec.meta.title
 
-[optional] The matrix diagram `title`. The value should be a `string`. 
+[__optional__] The matrix diagram `title`. The value should be a `string`. 
 
 ``` javascript
 spec.meta.title = 'My Matrix Diagram';
@@ -188,7 +188,7 @@ Note: as the chart `title` is optional, a matrix diagram generator may choose no
 
 #### spec.meta.description
 
-[optional] A description of the diagram and its contents. A common use for the description would be as a figure caption. The value should be a `string`.
+[__optional__] A description of the diagram and its contents. A common use for the description would be as a figure caption. The value should be a `string`.
 
 ``` javascript
 spec.meta.description = 'This diagram provides an alternative to force diagrams when displaying network data.';
