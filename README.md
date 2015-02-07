@@ -6,9 +6,9 @@ Matrix Diagram Specification
 
 ---
 1. 	[Installation](#installation)
-1. 	[Usage](#usage)
-	- 	[Examples](#usage-examples)
 1. 	[Specification](#specification)
+1. 	[Usage](#usage)
+1. 	[Examples](#examples)
 1. 	[Tests](#tests)
 	-	[Unit](#unit)
 	-	[Coverage](#test-coverage)
@@ -22,13 +22,20 @@ Matrix Diagram Specification
 $ npm install matrix-diagram-spec
 ```
 
+
+### Specification
+
+For specification documentation, consult the [wiki](https://github.com/figure-io/matrix-diagram-spec/wiki).
+
+
+
 ### Usage
 
 ``` javascript
 var validate = require( 'matrix-diagram-spec' );
 ```
 
-The specification has the following attributes and methods...
+The validator has the following attributes and methods...
 
 
 <a name="method-validate"></a>
@@ -79,7 +86,6 @@ var errs = validator.errors;
 ```
 
 
-<a name="usage-examples"></a>
 ### Examples
 
 ``` javascript
@@ -138,11 +144,6 @@ To run the example code from the top-level application directory,
 $ node ./examples/index.js
 ```
 
-
----
-## Specification
-
-For specification documentation, consult the [wiki](https://github.com/figure-io/matrix-diagram-spec/wiki).
 
 ---
 ## Tests
