@@ -31,6 +31,7 @@ TODO
 2. axes
 	- `test.axes.js`: issue #14
 3. marks
+	- `test.marks.mark.js`: issue #14
 4. brushes
 5. legend
 	- `test.legend.js`: issue #14

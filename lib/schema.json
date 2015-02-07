@@ -435,7 +435,10 @@
 								},
 								"field": {
 									"description": "specifies the datum field to map to a fill color",
-									"type": "string"
+									"type": [
+										"string",
+										"number"
+									]
 								}
 							},
 							"required": [
@@ -453,7 +456,10 @@
 								},
 								"field": {
 									"description": "specifies the datum field to map to a fill-opacity",
-									"type": "string"
+									"type": [
+										"string",
+										"number"
+									]
 								}
 							},
 							"required": [
@@ -466,8 +472,7 @@
 			},
 			"required": [
 				"type",
-				"data",
-				"properties"
+				"data"
 			]
 		},
 		"brush": {

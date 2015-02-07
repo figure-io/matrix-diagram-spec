@@ -23,7 +23,7 @@ var tmpl = require( './fixtures/template.json' );
 
 // TESTS //
 
-describe( 'data', function tests() {
+describe( 'marks', function tests() {
 
 	var template;
 
@@ -35,13 +35,13 @@ describe( 'data', function tests() {
 		template = JSON.parse( tmpl );
 	});
 
-	it( 'should invalidate a chart configuration without a data field', function test() {
-		template.data = undefined;
+	it( 'should invalidate a chart configuration without a marks field', function test() {
+		template.marks = undefined;
 		assert.notOk( spec.validate( template ) );
 		assert.strictEqual( spec.errors().length, 1 );
 	});
 
-	it( 'should invalidate a chart configuration with an invalid data field (non-array)', function test() {
+	it( 'should invalidate a chart configuration with an invalid marks field (non-array)', function test() {
 		var values = [
 			5,
 			true,
@@ -52,17 +52,17 @@ describe( 'data', function tests() {
 			'beep'
 		];
 
-		var data = template.data;
+		var marks = template.marks;
 		for ( var i = 0; i < values.length; i++ ) {
-			template.data = data;
-			template.data = values[ i ];
+			template.marks = marks;
+			template.marks = values[ i ];
 			assert.notOk( spec.validate( template ) );
 			assert.strictEqual( spec.errors().length, 1 );
 		}
 	});
 
-	it( 'should invalidate a chart configuration without at least one data source', function test() {
-		template.data = [];
+	it( 'should invalidate a chart configuration without at least one mark', function test() {
+		template.marks = [];
 		assert.notOk( spec.validate( template ) );
 		assert.strictEqual( spec.errors().length, 1 );
 	});
