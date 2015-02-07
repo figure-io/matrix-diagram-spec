@@ -41,7 +41,7 @@ The validator has the following attributes and methods...
 <a name="method-validate"></a>
 #### validate( config )
 
-Validates if a configuration object conforms to the [matrix diagram](https://github.com/figure-io/polymer-matrix-diagram) specification.
+Validates if a configuration object conforms to the [matrix diagram specification](https://github.com/figure-io/matrix-diagram-spec/wiki).
 
 ``` javascript
 var chart = {
@@ -181,7 +181,7 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2014. Athan Reines.
+Copyright &copy; 2015. Athan Reines.
 
 
 
