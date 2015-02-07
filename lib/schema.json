@@ -59,7 +59,7 @@
 			"description": "a data array item specifying how to access chart data",
 			"oneOf": [
 				{
-					"$ref": "#/definitions/dataEmbedded"
+					"$ref": "#/definitions/dataInline"
 				},
 				{
 					"$ref": "#/definitions/dataURL"
@@ -69,7 +69,7 @@
 				}
 			]
 		},
-		"dataEmbedded": {
+		"dataInline": {
 			"description": "a data item which includes the raw chart data directly in the chart specification",
 			"type": "object",
 			"properties": {
