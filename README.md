@@ -33,6 +33,42 @@ Matrix Diagram Specification
 			-	[description](#spec-data-source-desc)
 			-	[source](#spec-data-source-source)
 			-	[transforms](#spec-data-source-transforms)
+	-	[canvas](#spec-canvas)
+		*	[width](#spec-canvas-width)
+		*	[height](#spec-canvas-height)
+		*	[padding](#spec-canvas-padding)
+			-	[left](#spec-canvas-padding-left)
+			-	[right](#spec-canvas-padding-left)
+			-	[top](#spec-canvas-padding-top)
+			-	[bottom](#spec-canvas-padding-bottom)
+	-	[scales](#spec-scales)
+		*	[x](#spec-scales-x)
+			-	[type](#spec-scales-x-type)
+			-	[description](#spec-scales-x-desc)
+			-	[domain](#spec-scales-x-domain)
+			-	[range](#spec-scales-x-range)
+		*	[y](#spec-scales-y)
+			-	[type](#spec-scales-y-type)
+			-	[description](#spec-scales-y-desc)
+			-	[domain](#spec-scales-y-domain)
+			-	[range](#spec-scales-y-range)
+		*	[z](#spec-scales-z)
+			-	[type](#spec-scales-z-type)
+			-	[description](#spec-scales-z-desc)
+			-	[domain](#spec-scales-z-domain)
+			-	[range](#spec-scales-z-range)
+		*	[color](#spec-scales-color)
+			-	[type](#spec-scales-color-type)
+			-	[description](#spec-scales-color-desc)
+			-	[domain](#spec-scales-color-domain)
+			-	[range](#spec-scales-color-range)
+	-	[axes](#spec-axes)
+		*	[x](#spec-axes-x)
+			-	[scale](#spec-axes-x-scale)
+			-	[label](#spec-axes-x-label)
+		*	[y](#spec-axes-y)
+			-	[scale](#spec-axes-y-scale)
+			-	[label](#spec-axes-y-label)
 	-	[Examples](#spec-examples)
 1. 	[Tests](#tests)
 	-	[Unit](#unit)
@@ -374,26 +410,30 @@ spec.type = 'matrix-diagram';
 
 The `meta` field includes any information associated with a matrix diagram that is not essential for understanding the diagram itself. For example, a diagram `title` and `description`, while possibly useful in placing the diagram in context, are not essential for reading and understanding the diagram.
 
+``` javascript
+var meta = spec.meta;
+```
+
 
 <a name="spec-meta-title"></a>
-#### spec.meta.title
+###### meta.title
 
 [__optional__] The matrix diagram `title`. The value should be a `string`. 
 
 ``` javascript
-spec.meta.title = 'My Matrix Diagram';
+meta.title = 'My Matrix Diagram';
 ```
 
 Note: as the chart `title` is optional, a matrix diagram generator may choose not to support its inclusion in the generated graphic.
 
 
 <a name="spec-meta-description"></a>
-#### spec.meta.description
+###### meta.description
 
 [__optional__] A description of the diagram and its contents. A common use for the description would be as a figure caption. The value should be a `string`.
 
 ``` javascript
-spec.meta.description = 'This diagram provides an alternative to force diagrams when displaying network data.';
+meta.description = 'This diagram provides an alternative to force diagrams when displaying network data.';
 ```
 
 Note: as the chart `description` is optional, a matrix diagram generator may choose not to support its inclusion in the generated graphic.
@@ -541,7 +581,7 @@ data.url = '127.0.0.0.1:8080/';
 <a name="spec-data-url-format"></a>
 ###### data.format
 
-The format `object` specifies how parsers should treat accessed data. 
+The format `object` specifies how parsers should handle accessed data. 
 
 
 ####### data.format.type
@@ -549,7 +589,7 @@ The format `object` specifies how parsers should treat accessed data.
 The `object` must include a `type` field, which may be of either `json`, `csv`, and `tsv`.
 
 ``` javascript
-data.format.type = 'json';
+data.format.type = 'csv';
 ```
 
 The default format type is `json`.
@@ -623,7 +663,7 @@ data.name = 'beepboop';
 [__optional__] A description of the data. The `description` must be a `string`.
 
 ``` javascript
-data.description = 'Data accessed via the XYZ api.';
+data.description = 'An included dataset but with additional transformations.';
 ```
 
 
@@ -650,6 +690,84 @@ data.transforms = [
 ```
 
 Note: transforms are generator/data-pipeline specific. Transform parameters required in the transformation `object` will be particular to the transform and should be determined from the relevant transform documentation.
+
+
+
+<a name="spec-canvas"></a>
+#### spec.canvas
+
+The [`canvas`](https://github.com/figure-io/chart-metadata-terms) (i.e., the available area in which to draw chart elements and encode data values) specification stipulates the matrix diagram layout.
+
+``` javascript
+var canvas = spec.canvas;
+```
+
+<a name="spec-canvas-width"></a>
+###### canvas.width
+
+The canvas `width` (in pixels). The `width` should be either a positive `integer` or `null`. If `null`, the diagram generator should either calculate the width based on parent container dimensions or use a default value. 
+
+``` javascript
+canvas.width = 600; // px
+```
+
+
+<a name="spec-canvas-height"></a>
+###### canvas.height
+
+The canvas `height` (in pixels). The `height` should be either a positive `integer` or `null`. If `null`, the diagram generator should either calculate the height based on parent container dimensions or use a default value. 
+
+``` javascript
+canvas.height = 400; // px
+```
+
+
+<a name="spec-canvas-padding"></a>
+###### canvas.padding
+
+The canvas `padding`, which is a set of values defining distances between the canvas edge and graphical elements. All values should either be positive `integers` or `null`. If `null`, the diagram generator should either use default values or compute based on existence of labels, legends, and other chart elements.
+
+
+####### canvas.padding.left
+
+Left canvas padding. If `null`, value should be determined by diagram generator based on row name length, y-label position, and the existence of other chart elements.
+
+``` javascript
+canvas.padding.left = 40; // px
+```
+
+
+####### canvas.padding.right
+
+Right canvas padding. If `null`, value should be determined by diagram generator.
+
+``` javascript
+canvas.padding.right = 10; // px
+```
+
+####### canvas.padding.top
+
+Top canvas padding. If `null`, value should be determined by diagram generator based on column name length, x-label position, and the existence of other chart elements.
+
+``` javascript
+canvas.padding.top = 80; // px
+```
+
+
+####### canvas.padding.bottom
+
+Bottom canvas padding. If `null`, value should be determined by diagram generator based on legend entries and the existence of other chart elements.
+
+``` javascript
+canvas.padding.bottom = 100; // px
+```
+
+
+
+<a name="spec-scales"></a>
+#### spec.scales
+
+
 
 
 
