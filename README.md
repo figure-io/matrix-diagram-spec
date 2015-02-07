@@ -393,7 +393,7 @@ The specification may include multiple data sources, each of a different type. T
 
 
 <a name="spec-data-inline"></a>
-##### &#35inline
+##### &#35;inline
 
 An inline data source embeds diagram data directly in the matrix diagram specification.
 
