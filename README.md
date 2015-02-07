@@ -16,8 +16,23 @@ Matrix Diagram Specification
 		*	[description](#spec-meta-description)
 	-	[data](#spec-data)
 		*	[inline](#spec-data-inline)
+			-	[name](#spec-data-inline-name)
+			-	[description](#spec-data-inline-desc)
+			-	[rownames](#spec-data-inline-rownames)
+			-	[colnames](#spec-data-inline-colnames)
+			-	[values](#spec-data-inline-values)
+			-	[transforms](#spec-data-inline-transforms)
 		*	[url](#spec-data-url)
+			-	[name](#spec-data-url-name)
+			-	[description](#spec-data-url-desc)
+			-	[url](#spec-data-url-url)
+			-	[format](#spec-data-url-format)
+			-	[transforms](#spec-data-url-transforms)
 		*	[source](#spec-data-source)
+			-	[name](#spec-data-source-name)
+			-	[description](#spec-data-source-desc)
+			-	[source](#spec-data-source-source)
+			-	[transforms](#spec-data-source-transforms)
 	-	[Examples](#spec-examples)
 1. 	[Tests](#tests)
 	-	[Unit](#unit)
@@ -480,7 +495,164 @@ data.transforms = [
 ];
 ```
 
-Note: transforms are generator/data-pipeline specific. Transform parameters required in the transformation object will be particular to the transform and should be determined from the relevant transform documentation.
+Note: transforms are generator/data-pipeline specific. Transform parameters required in the transformation `object` will be particular to the transform and should be determined from the relevant transform documentation.
+
+
+
+
+<a name="spec-data-url"></a>
+#### &#35; URL
+
+A url data source specifies how to access a remote dataset for inclusion in the matrix diagram.
+
+``` javascript
+var data = spec.data[ i ];
+```
+
+<a name="spec-data-url-name"></a>
+###### data.name
+
+A unique `name` for the data. The `name` must be a `string` and will be referenced by other specification elements.
+
+``` javascript
+data.name = '5678';
+```
+
+<a name="spec-data-url-desc"></a>
+###### data.description
+
+[__optional__] A description of the data. The `description` must be a `string`.
+
+``` javascript
+data.description = 'Data accessed via the XYZ api.';
+```
+
+
+<a name="spec-data-url-url"></a>
+###### data.url
+
+The `url` from which to access the diagram data. The `url` must be a valid URI.
+
+``` javascript
+data.url = '127.0.0.0.1:8080/';
+```
+
+
+<a name="spec-data-url-format"></a>
+###### data.format
+
+The format `object` specifies how parsers should treat accessed data. 
+
+
+####### data.format.type
+
+The `object` must include a `type` field, which may be of either `json`, `csv`, and `tsv`.
+
+``` javascript
+data.format.type = 'json';
+```
+
+The default format type is `json`.
+
+
+####### data.format.fields
+
+[__optional__] For `json` data, the `fields` property allows you to map a JSON path to the canonical data fields (i.e., `rownames`, `colnames`, and `values`). If a canonical field is not provided, a parser should assume that the JSON path directly maps to the canonical field. For example,
+
+``` javascript
+data.format.fields = {
+	'rownames': 'rows',
+	'colnames': 'cols',
+	'values': 'vals'
+};
+```
+
+which maps the following JSON data to canonical fields.
+
+``` javascript
+var d = {
+	'rows': ['f', 'g', 'h' ],
+	'cols': ['foo', 'bar', 'buzz', 'bap'],
+	'vals': [
+		[...],
+		[...],
+		...
+	]
+};
+```
+
+<a name="spec-data-url-transforms"></a>
+###### data.transforms
+
+[__optional__] An `array` of transformations to apply to the data. Each transform should be an `object` with a `type` field, indicating the type of transform to be performed.
+
+``` javascript
+data.transforms = [
+	{'type': 'transform1',...},
+	{'type': 'transform2',...},
+	...
+];
+```
+
+Note: transforms are generator/data-pipeline specific. Transform parameters required in the transformation `object` will be particular to the transform and should be determined from the relevant transform documentation.
+
+
+
+
+<a name="spec-data-source"></a>
+#### &#35; source
+
+A source data item is one which references another named data item in the diagram specification.
+
+``` javascript
+var data = spec.data[ i ];
+```
+
+<a name="spec-data-source-name"></a>
+###### data.name
+
+A unique `name` for the data. The `name` must be a `string` and will be referenced by other specification elements.
+
+``` javascript
+data.name = 'beepboop';
+```
+
+<a name="spec-data-source-desc"></a>
+###### data.description
+
+[__optional__] A description of the data. The `description` must be a `string`.
+
+``` javascript
+data.description = 'Data accessed via the XYZ api.';
+```
+
+
+<a name="spec-data-source-source"></a>
+###### data.source
+
+The unique `name` of the referenced data source. For example, to reference the inline data example above
+
+``` javascript
+data.source = '1234';
+```
+
+<a name="spec-data-url-transforms"></a>
+###### data.transforms
+
+[__optional__] An `array` of transformations to apply to the data. Each transform should be an `object` with a `type` field, indicating the type of transform to be performed.
+
+``` javascript
+data.transforms = [
+	{'type': 'transform1',...},
+	{'type': 'transform2',...},
+	...
+];
+```
+
+Note: transforms are generator/data-pipeline specific. Transform parameters required in the transformation `object` will be particular to the transform and should be determined from the relevant transform documentation.
+
+
+
 
 
 
