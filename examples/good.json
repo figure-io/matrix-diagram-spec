@@ -144,6 +144,14 @@
 			}
 		}
 	],
+	"legend": {
+		"fill": {
+			"label": ""
+		},
+		"fillOpacity": {
+			"label": ""
+		}
+	},
 	"brushes": {
 		"x": {
 			"data": {
@@ -154,14 +162,6 @@
 			"data": {
 				"name": ""
 			}
-		}
-	},
-	"legend": {
-		"fill": {
-			"label": ""
-		},
-		"fillOpacity": {
-			"label": ""
 		}
 	},
 	"transitions": {

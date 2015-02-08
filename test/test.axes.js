@@ -61,17 +61,16 @@ describe( 'axes', function tests() {
 		}
 	});
 
-	// TODO: unhide test once IMJV issue #14 resolved
-	xit( 'should require `x` and `y` fields', function test() {
+	it( 'should require `x` and `y` fields', function test() {
 		var axis;
 
 		axis = template.axes.x;
-		template.axes.x = null;
+		template.axes.x = undefined;
 		assert.notOk( validate( template ) );
 		template.axes.x = axis;
 
 		axis = template.axes.y;
-		template.axes.y = null;
+		template.axes.y = undefined;
 		assert.notOk( validate( template ) );
 		template.axes.y = axis;
 	});

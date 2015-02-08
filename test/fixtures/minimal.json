@@ -80,8 +80,15 @@
 			}
 		}
 	],
+	"legend": {
+		"fill": {
+			"label": ""
+		},
+		"fillOpacity": {
+			"label": ""
+		}
+	},
 	"brushes": {},
-	"legend": {},
 	"transitions": {},
 	"interactions": {},
 	"settings": {}

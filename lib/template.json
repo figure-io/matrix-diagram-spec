@@ -89,6 +89,14 @@
 			}
 		}
 	],
+	"legend": {
+		"fill": {
+			"label": ""
+		},
+		"fillOpacity": {
+			"label": ""
+		}
+	},
 	"brushes": {
 		"x": {
 			"data": {
@@ -101,7 +109,6 @@
 			}
 		}
 	},
-	"legend": {},
 	"transitions": {
 		"duration": 2500
 	},

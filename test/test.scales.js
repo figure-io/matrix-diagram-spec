@@ -61,27 +61,26 @@ describe( 'scales', function tests() {
 		}
 	});
 
-	// TODO: unhide test once IMJV issue #14 resolved
-	xit( 'should require `x`, `y`, `z`, and `color` fields', function test() {
+	it( 'should require `x`, `y`, `z`, and `color` fields', function test() {
 		var scale;
 
 		scale = template.scales.x;
-		template.scales.x = null;
+		template.scales.x = undefined;
 		assert.notOk( validate( template ) );
 		template.scales.x = scale;
 
 		scale = template.scales.y;
-		template.scales.y = null;
+		template.scales.y = undefined;
 		assert.notOk( validate( template ) );
 		template.scales.y = scale;
 
 		scale = template.scales.z;
-		template.scales.z = null;
+		template.scales.z = undefined;
 		assert.notOk( validate( template ) );
 		template.scales.z = scale;
 
 		scale = template.scales.color;
-		template.scales.color = null;
+		template.scales.color = undefined;
 		assert.notOk( validate( template ) );
 		template.scales.color = scale;
 	});

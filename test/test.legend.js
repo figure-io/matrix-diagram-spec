@@ -61,10 +61,18 @@ describe( 'legend', function tests() {
 		}
 	});
 
-	// TODO: unhide once IMJV issue #14 resolved
-	xit( 'should not require any particular fields', function test() {
-		template.legend = {};
-		assert.ok( validate( template ) );
+	it( 'should require `fill` and `fillOpacity` fields', function test() {
+		var entry;
+
+		entry = template.legend.fill;
+		template.legend.fill = undefined;
+		assert.notOk( validate( template ) );
+		template.legend.fill = entry;
+
+		entry = template.legend.fillOpacity;
+		template.legend.fill = undefined;
+		assert.notOk( validate( template ) );
+		template.legend.fillOpacity = entry;
 	});
 
 });

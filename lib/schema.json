@@ -621,20 +621,6 @@
 			},
 			"minItems": 1
 		},
-		"brushes": {
-			"description": "specification for axis brushes",
-			"type": "object",
-			"properties": {
-				"x": {
-					"description": "x-axis brush",
-					"$ref": "#/definitions/brush"
-				},
-				"y": {
-					"description": "y-axis brush",
-					"$ref": "#/definitions/brush"
-				}
-			}
-		},
 		"legend": {
 			"description": "specification for legend entries",
 			"type": "object",
@@ -660,6 +646,24 @@
 						}
 					},
 					"required": [ "label" ]
+				}
+			},
+			"required": [
+				"fill",
+				"fillOpacity"
+			]
+		},
+		"brushes": {
+			"description": "specification for axis brushes",
+			"type": "object",
+			"properties": {
+				"x": {
+					"description": "x-axis brush",
+					"$ref": "#/definitions/brush"
+				},
+				"y": {
+					"description": "y-axis brush",
+					"$ref": "#/definitions/brush"
 				}
 			}
 		},

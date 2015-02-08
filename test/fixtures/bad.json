@@ -67,18 +67,18 @@
 			}
 		}
 	],
+	"legend": {
+		"fill": "whopper",
+		"fillOpacity": {
+			"label": 5
+		}
+	},
 	"brushes": {
 		"x": false,
 		"y": {
 			"data": {
 				"name": null
 			}
-		}
-	},
-	"legend": {
-		"fill": "whopper",
-		"fillOpacity": {
-			"label": 5
 		}
 	},
 	"transitions": {

@@ -127,6 +127,14 @@
 			}
 		}
 	],
+	"legend": {
+		"fill": {
+			"label": "{{ entry_label }}"
+		},
+		"fillOpacity": {
+			"label": "{{ entry_label }}"
+		}
+	},
 	"brushes": {
 		"x": {
 			"data": {
@@ -147,14 +155,6 @@
 					}
 				]
 			}
-		}
-	},
-	"legend": {
-		"fill": {
-			"label": "{{ entry_label }}"
-		},
-		"fillOpacity": {
-			"label": "{{ entry_label }}"
 		}
 	},
 	"transitions": {

@@ -23,20 +23,18 @@ TODO
 		-	maybe under settings; brushable rows/cols can be inferred based on existence of brushes
 		-	`brushableRows: {...}`
 		- 	if `null`, `false`, or absent, then no brush element
+		- 	probably be better if brushes were own separate specification, as these may be considered essential data elements, even if not interactive (e.g., in providing context; e.g., with timeseries)
 12. 
 
 
 ### Tests
 
-1. scales
-	- `test.scales.js`: issue #14
-2. axes
-	- `test.axes.js`: issue #14
+1. 
+2. 
 3. marks
 	- `test.marks.mark.js`: issue #14
 4. 
-5. legend
-	- `test.legend.js`: issue #14
+5. 
 
 
 ### Notes
