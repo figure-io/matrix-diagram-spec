@@ -728,8 +728,8 @@
 		"scales",
 		"axes",
 		"marks",
-		"brushes",
 		"legend",
+		"brushes",
 		"transitions",
 		"interactions",
 		"settings"

@@ -17,7 +17,13 @@ TODO
 	-	if a chart supports multiple x/y axes, then those axes should be namespaced accordingly; e.g., x1,x2,x3,x4,...,etc. The key name could be just as easily parsed to get the axis type, as reading the `type` key for each array element
 9. `name` or `id`?
 10. should a `title` field be required in `meta`?
-11. 
+11. should `interactions` and `transitions` be placed under `settings`? 
+	- 	Yes, as really these will be generator specific
+	-	where do we put brushes?
+		-	maybe under settings; brushable rows/cols can be inferred based on existence of brushes
+		-	`brushableRows: {...}`
+		- 	if `null`, `false`, or absent, then no brush element
+12. 
 
 
 ### Tests
