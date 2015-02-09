@@ -99,11 +99,13 @@
 	},
 	"brushes": {
 		"x": {
+			"description": "",
 			"data": {
 				"name": ""
 			}
 		},
 		"y": {
+			"description": "",
 			"data": {
 				"name": ""
 			}

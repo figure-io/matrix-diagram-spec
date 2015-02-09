@@ -76,6 +76,7 @@
 	"brushes": {
 		"x": false,
 		"y": {
+			"description": [],
 			"data": {
 				"name": null
 			}

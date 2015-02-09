@@ -137,6 +137,7 @@
 	},
 	"brushes": {
 		"x": {
+			"description": "{{ xbrush_description }}",
 			"data": {
 				"name": "{{ data_name }}",
 				"transforms": [
@@ -147,6 +148,7 @@
 			}
 		},
 		"y": {
+			"description": "{{ ybrush_description }}",
 			"data": {
 				"name": "{{ data_name }}",
 				"transforms": [

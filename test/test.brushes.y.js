@@ -75,6 +75,25 @@ describe( 'y-brush', function tests() {
 		}
 	});
 
+	it( 'should invalidate a chart configuration with an invalid y-brush description (non-string)', function test() {
+		var values = [
+			3,
+			true,
+			NaN,
+			null,
+			function(){},
+			[],
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			template.brushes.y.description = '';
+			template.brushes.y.description = values[ i ];
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
+		}
+	});
+
 	it( 'should invalidate an y-brush which refers to a data source with an invalid name (non-string)', function test() {
 		var values = [
 			5,

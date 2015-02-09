@@ -55,6 +55,25 @@ describe( 'x-brush', function tests() {
 		}
 	});
 
+	it( 'should invalidate a chart configuration with an invalid x-brush description (non-string)', function test() {
+		var values = [
+			3,
+			true,
+			NaN,
+			null,
+			function(){},
+			[],
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			template.brushes.x.description = '';
+			template.brushes.x.description = values[ i ];
+			assert.notOk( validate( template ) );
+			assert.strictEqual( validate.errors.length, 1 );
+		}
+	});
+
 	it( 'should invalidate a chart configuration with an invalid x-brush data field (non-object)', function test() {
 		var values = [
 			5,

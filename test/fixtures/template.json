@@ -137,6 +137,7 @@
 	},
 	"brushes": {
 		"x": {
+			"description": "",
 			"data": {
 				"name": "",
 				"transforms": [
@@ -147,6 +148,7 @@
 			}
 		},
 		"y": {
+			"description": "",
 			"data": {
 				"name": "",
 				"transforms": [

@@ -494,6 +494,10 @@
 			"description": "schema for a chart brush",
 			"type": "object",
 			"properties": {
+				"description": {
+					"description": "brush description",
+					"type": "string"
+				},
 				"data": {
 					"description": "brush data",
 					"$ref": "#/definitions/associatedData"

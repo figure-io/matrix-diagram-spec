@@ -20,7 +20,7 @@ TODO
 		-	
 2. monitor IMJV [issue #14](https://github.com/mafintosh/is-my-json-valid/issues/14)
 3. should a `title` field be required in `meta`?
-4.
+4. 
 
 
 ### Tests
