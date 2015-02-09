@@ -402,7 +402,15 @@
 			]
 		},
 		"mark": {
-			"description": "visual encoding associated with chart data",
+			"description": "visual encoding associsted with chart data",
+			"oneOf": [
+				{
+					"$ref": "#/definitions/rect"
+				}
+			]
+		},
+		"rect": {
+			"description": "rectangle visual encoding",
 			"type": "object",
 			"properties": {
 				"name": {
@@ -422,11 +430,11 @@
 					"$ref": "#/definitions/associatedData"
 				},
 				"properties": {
-					"description": "specifies associated mark properties",
+					"description": "specifies associated rectangle properties",
 					"type": "object",
 					"properties": {
 						"fill": {
-							"description": "cell fill color",
+							"description": "rectangle fill color",
 							"type": "object",
 							"properties": {
 								"scale": {
@@ -437,7 +445,8 @@
 									"description": "specifies the datum field to map to a fill color",
 									"type": [
 										"string",
-										"number"
+										"number",
+										"null"
 									]
 								}
 							},
@@ -447,7 +456,7 @@
 							]
 						},
 						"fillOpacity": {
-							"description": "cell fill-opacity",
+							"description": "rectangle fill-opacity",
 							"type": "object",
 							"properties": {
 								"scale": {
@@ -458,7 +467,8 @@
 									"description": "specifies the datum field to map to a fill-opacity",
 									"type": [
 										"string",
-										"number"
+										"number",
+										"null"
 									]
 								}
 							},
@@ -467,12 +477,17 @@
 								"field"
 							]
 						}
-					}
+					},
+					"required": [
+						"fill",
+						"fillOpacity"
+					]
 				}
 			},
 			"required": [
 				"type",
-				"data"
+				"data",
+				"properties"
 			]
 		},
 		"brush": {

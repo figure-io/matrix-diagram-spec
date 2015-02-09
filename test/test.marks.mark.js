@@ -174,7 +174,7 @@ describe( 'mark', function tests() {
 		var values = [
 			5,
 			true,
-			null,
+			// null,
 			NaN,
 			function(){},
 			[],
@@ -230,10 +230,9 @@ describe( 'mark', function tests() {
 		}
 	});
 
-	it( 'should invalidate a mark with an invalid fill field path (non-string and non-numeric)', function test() {
+	it( 'should invalidate a mark with an invalid fill field path (non-string, non-null, and non-numeric)', function test() {
 		var values = [
 			true,
-			null,
 			// NaN,
 			function(){},
 			[],
@@ -241,7 +240,7 @@ describe( 'mark', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.marks[ 0 ].properties.fill.field = '';
+			template.marks[ 0 ].properties.fill.field = null;
 			template.marks[ 0 ].properties.fill.field = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
@@ -288,10 +287,9 @@ describe( 'mark', function tests() {
 		}
 	});
 
-	it( 'should invalidate a mark with an invalid fill opacity field path (non-string and non-numeric)', function test() {
+	it( 'should invalidate a mark with an invalid fill opacity field path (non-string, non-null, and non-numeric)', function test() {
 		var values = [
 			true,
-			null,
 			// NaN,
 			function(){},
 			[],
@@ -299,14 +297,14 @@ describe( 'mark', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.marks[ 0 ].properties.fillOpacity.field = '';
+			template.marks[ 0 ].properties.fillOpacity.field = null;
 			template.marks[ 0 ].properties.fillOpacity.field = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
-	it( 'should require `type` and `data` fields', function test() {
+	it( 'should require `type`, `data`, and `properties` fields', function test() {
 		var val;
 
 		template.marks[ 0 ].type = undefined;
@@ -320,7 +318,7 @@ describe( 'mark', function tests() {
 
 		val = template.marks[ 0 ].properties;
 		template.marks[ 0 ].properties = undefined;
-		assert.ok( validate( template ) );
+		assert.notOk( validate( template ) );
 		template.marks[ 0 ].properties = val;
 	});
 
@@ -330,9 +328,32 @@ describe( 'mark', function tests() {
 		template.marks[ 0 ].data.name = '';
 	});
 
-	xit( 'should not require `fill` and `fillOpacity` properties', function test() {
-		template.marks[ 0 ].properties = {};
-		assert.ok( validate( template ) );
+	it( 'should require `fill` and `fillOpacity` properties', function test() {
+		var val;
+
+		val = template.marks[ 0 ].properties.fill;
+		template.marks[ 0 ].properties.fill = undefined;
+		assert.notOk( validate( template ) );
+		template.marks[ 0 ].properties.fill = val;
+
+		val = template.marks[ 0 ].properties.fillOpacity;
+		template.marks[ 0 ].properties.fillOpacity = undefined;
+		assert.notOk( validate( template ) );
+		template.marks[ 0 ].properties.fillOpacity = val;
+	});
+
+	it( 'should require `scale` and `field` properties', function test() {
+		var val;
+
+		val = template.marks[ 0 ].properties.fill.scale;
+		template.marks[ 0 ].properties.fill.scale = undefined;
+		assert.notOk( validate( template ) );
+		template.marks[ 0 ].properties.fill.scale = val;
+
+		val = template.marks[ 0 ].properties.fill.field;
+		template.marks[ 0 ].properties.fill.field = undefined;
+		assert.notOk( validate( template ) );
+		template.marks[ 0 ].properties.fill.field = val;
 	});
 
 });

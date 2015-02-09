@@ -118,11 +118,11 @@
 			"properties": {
 				"fill": {
 					"scale": "color",
-					"field": ""
+					"field": null
 				},
 				"fillOpacity": {
 					"scale": "z",
-					"field": ""
+					"field": null
 				}
 			}
 		}

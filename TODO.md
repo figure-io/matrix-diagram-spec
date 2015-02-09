@@ -16,6 +16,7 @@ TODO
 8. Should `axes` just be an `object`?
 	-	if a chart supports multiple x/y axes, then those axes should be namespaced accordingly; e.g., x1,x2,x3,x4,...,etc. The key name could be just as easily parsed to get the axis type, as reading the `type` key for each array element
 9. `name` or `id`?
+	-	`package.json` uses `name`.
 10. should a `title` field be required in `meta`?
 11. should `interactions` and `transitions` be placed under `settings`? 
 	- 	Yes, as really these will be generator specific
@@ -24,7 +25,9 @@ TODO
 		-	`brushableRows: {...}`
 		- 	if `null`, `false`, or absent, then no brush element
 		- 	probably be better if brushes were own separate specification, as these may be considered essential data elements, even if not interactive (e.g., in providing context; e.g., with timeseries)
-12. 
+12. make `settings` sub-spec optional
+13. brushes can be more than just `x` and `y`. Generators/bespoke diagrams could implement others.
+14. 
 
 
 ### Tests
