@@ -35,6 +35,7 @@ Validates if a configuration object conforms to the [matrix diagram specificatio
 ``` javascript
 var chart = {
 	"name": "Awesome configuration.",
+	"type": "matrix-diagram",
 	"meta": {
 		"title": "My Diagram",
 		"description": "An awesome matrix diagram."

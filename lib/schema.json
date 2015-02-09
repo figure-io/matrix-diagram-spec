@@ -713,11 +713,11 @@
 							"type": "boolean"
 						},
 						"brushableRows": {
-							"description": "specifies if a chart should have a brushable x-axis",
+							"description": "specifies if a chart should have a brushable y-axis",
 							"type": "boolean"
 						},
 						"brushableCols": {
-							"description": "specifies if a chart should have a brushable y-axis",
+							"description": "specifies if a chart should have a brushable x-axis",
 							"type": "boolean"
 						},
 						"sortableRows": {
