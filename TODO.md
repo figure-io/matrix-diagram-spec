@@ -18,24 +18,9 @@ TODO
 		-	creates server, bound to random port
 		-	launches chrome and opens server url
 		-	
-2. 
-3. figure out what to do about the color scale
-	-	how actually implemented in the polymer component
-4. monitor IMJV [issue #14](https://github.com/mafintosh/is-my-json-valid/issues/14)
-5. 
-6. 
-7. how does this fit in with the `config` method?
-	-	stipulate that a partial object be merged with a spec template
-	-	could handle this internally; always merge and then validate. +1
-8. 
-9. 
-10. should a `title` field be required in `meta`?
-11. where do we put brushes?
-	- 	probably be better if brushes were own separate specification, as these may be considered essential data elements, even if not interactive (e.g., in providing context; e.g., with timeseries)
-	- 	brushes can be more than just `x` and `y`. Generators/bespoke diagrams could implement others
-12. 
-13. 
-14. 
+2. monitor IMJV [issue #14](https://github.com/mafintosh/is-my-json-valid/issues/14)
+3. should a `title` field be required in `meta`?
+4.
 
 
 ### Tests
@@ -68,4 +53,6 @@ TODO
 	-	legend.fillOpacity
 2. Should `axes` just be an `object`?
 	-	if a chart supports multiple x/y axes, then those axes should be namespaced accordingly; e.g., x1,x2,x3,x4,...,etc. The key name could be just as easily parsed to get the axis type, as reading the `type` key for each array element
-3. 	
+3. Where do we put brushes?
+	- 	probably be better if brushes were own separate specification, as these may be considered essential data elements, even if not interactive (e.g., in providing context; e.g., with timeseries)
+	- 	brushes can be more than just `x` and `y`. Generators/bespoke diagrams could implement others.

@@ -70,6 +70,8 @@ describe( 'matrix-diagram-spec', function tests() {
 		// Bad configuration:
 		isValid = validate( badConfig );
 		assert.notOk( isValid );
+
+		assert.strictEqual( validate.errors.length, 31 );
 	});
 
 	it( 'should validate a minimal chart configuration', function test() {
