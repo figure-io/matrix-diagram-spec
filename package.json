@@ -1,6 +1,6 @@
 {
   "name": "matrix-diagram-spec",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "JSON specification and validation for matrix diagrams.",
   "author": {
     "name": "Athan Reines",
