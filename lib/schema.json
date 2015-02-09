@@ -44,7 +44,7 @@
 			"minItems": 0
 		},
 		"transform": {
-			"description": "a data transformation specification",
+			"description": "schema for data transformations",
 			"type": "object",
 			"properties": {
 				"type": {
@@ -213,7 +213,7 @@
 			]
 		},
 		"xScale": {
-			"description": "specifies how to map column data to pixel values",
+			"description": "schema which specifies how to map column data to pixel values",
 			"type": "object",
 			"properties": {
 				"type": {
@@ -240,7 +240,7 @@
 			]
 		},
 		"yScale": {
-			"description": "specifies how to map rows to pixel values",
+			"description": "schema which specifies how to map rows to pixel values",
 			"type": "object",
 			"properties": {
 				"type": {
@@ -267,7 +267,7 @@
 			]
 		},
 		"zScale": {
-			"description": "specifies how to map cell values to fill opacities",
+			"description": "schema which specifies how to map data values to fill opacities",
 			"type": "object",
 			"properties": {
 				"type": {
@@ -283,11 +283,11 @@
 					"type": "object",
 					"properties": {
 						"min": {
-							"description": "minimum cell value limit; if `null`, automatically calculated from cell data",
+							"description": "minimum data value limit; if `null`, automatically calculated from data values",
 							"$ref": "#/definitions/nullOrNumber"
 						},
 						"max": {
-							"description": "maximum cell value limit; if `null`, automatically calculated from cell data",
+							"description": "maximum data value limit; if `null`, automatically calculated from data values",
 							"$ref": "#/definitions/nullOrNumber"
 						}
 					},
@@ -326,7 +326,7 @@
 			]
 		},
 		"colorScale": {
-			"description": "specifies how to map cell values to colors",
+			"description": "specifies how to map data values to colors",
 			"type": "object",
 			"properties": {
 				"type": {
@@ -342,11 +342,11 @@
 					"type": "object",
 					"properties": {
 						"min": {
-							"description": "minimum cell value limit; if `null`, automatically calculated from cell data",
+							"description": "minimum data value limit; if `null`, automatically calculated from data values",
 							"$ref": "#/definitions/nullOrNumber"
 						},
 						"max": {
-							"description": "maximum cell value limit; if `null`, automatically calculated from cell data",
+							"description": "maximum data value limit; if `null`, automatically calculated from data values",
 							"$ref": "#/definitions/nullOrNumber"
 						}
 					},
@@ -356,7 +356,7 @@
 					]
 				},
 				"range": {
-					"description": "list of possible colors to which cell values may be mapped",
+					"description": "list of possible colors to which data values may be mapped",
 					"$ref": "#/definitions/stringArray"
 				}
 			},
@@ -367,7 +367,7 @@
 			]
 		},
 		"axis": {
-			"description": "defines a chart axis",
+			"description": "chart axis schema",
 			"type": "object",
 			"properties": {
 				"scale": {
@@ -402,7 +402,7 @@
 			]
 		},
 		"mark": {
-			"description": "visual encoding associsted with chart data",
+			"description": "visual encoding associated with chart data",
 			"oneOf": [
 				{
 					"$ref": "#/definitions/rect"
@@ -491,7 +491,7 @@
 			]
 		},
 		"brush": {
-			"description": "an axis brush",
+			"description": "schema for a chart brush",
 			"type": "object",
 			"properties": {
 				"data": {
@@ -536,15 +536,15 @@
 			"minItems": 1
 		},
 		"canvas": {
-			"description": "contains chart layout settings",
+			"description": "schema for chart layout settings",
 			"type": "object",
 			"properties": {
 				"width": {
-					"description": "chart width; if `null`, calculated by chart generator based on parent dimensions",
+					"description": "chart width; if `null`, should be calculated by chart generator based on parent dimensions",
 					"$ref": "#/definitions/layoutNullable"
 				},
 				"height": {
-					"description": "chart height; if `null`, calculated by chart generator based on parent dimensions",
+					"description": "chart height; if `null`, should be calculated by chart generator based on parent dimensions",
 					"$ref": "#/definitions/layoutNullable"
 				},
 				"padding": {
@@ -552,19 +552,19 @@
 					"type": "object",
 					"properties": {
 						"left": {
-							"description": "left padding; if `null`, determined by chart generator based on row name length, existence of a y-label, et cetera",
+							"description": "left padding; if `null`, should be determined by chart generator based on row name length, existence of a y-label, et cetera",
 							"$ref": "#/definitions/layoutNullable"
 						},
 						"right": {
-							"description": "right padding; if `null`, determined by chart generator",
+							"description": "right padding; if `null`, should be determined by chart generator",
 							"$ref": "#/definitions/layoutNullable"
 						},
 						"top": {
-							"description": "top padding; if `null`, determined by chart generator based on column name length, existence of an x-label, et cetera",
+							"description": "top padding; if `null`, should be determined by chart generator based on column name length, existence of an x-label, et cetera",
 							"$ref": "#/definitions/layoutNullable"
 						},
 						"bottom": {
-							"description": "bottom padding; if `null`, determined by chart generator based on existence of legend entries and other chart elements",
+							"description": "bottom padding; if `null`, should be determined by chart generator based on existence of legend entries and other chart elements",
 							"$ref": "#/definitions/layoutNullable"
 						}
 					},
@@ -583,7 +583,7 @@
 			]
 		},
 		"scales": {
-			"description": "defines the chart scales",
+			"description": "schema for chart scales",
 			"type": "object",
 			"properties": {
 				"x": {
@@ -629,7 +629,7 @@
 			]
 		},
 		"marks": {
-			"description": "list of visual encodings associated with chart data",
+			"description": "schema for visual encodings associated with chart data",
 			"type": "array",
 			"items": {
 				"$ref": "#/definitions/mark"
@@ -637,7 +637,7 @@
 			"minItems": 1
 		},
 		"legend": {
-			"description": "specification for legend entries",
+			"description": "schema for legend entries",
 			"type": "object",
 			"properties": {
 				"fill": {
@@ -669,7 +669,7 @@
 			]
 		},
 		"brushes": {
-			"description": "specification for axis brushes",
+			"description": "schema for chart brushes",
 			"type": "object",
 			"properties": {
 				"x": {
@@ -683,7 +683,7 @@
 			}
 		},
 		"settings": {
-			"description": "specifies chart generator settings",
+			"description": "schema for chart generator settings",
 			"type": "object",
 			"properties": {
 				"autoResize": {
@@ -695,7 +695,7 @@
 					"type": "boolean"
 				},
 				"transitions": {
-					"description": "specification for transition settings",
+					"description": "schema for transition settings",
 					"type": "object",
 					"properties": {
 						"duration": {
@@ -705,7 +705,7 @@
 					}
 				},
 				"interactions": {
-					"description": "specification for interaction settings",
+					"description": "schema for interaction settings",
 					"type": "object",
 					"properties": {
 						"brushable": {

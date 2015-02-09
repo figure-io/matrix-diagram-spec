@@ -18,7 +18,7 @@ TODO
 		-	creates server, bound to random port
 		-	launches chrome and opens server url
 		-	
-2. update descriptions (use `schema` keyword, rather than specifies)
+2. 
 3. figure out what to do about the color scale
 	-	how actually implemented in the polymer component
 4. monitor IMJV [issue #14](https://github.com/mafintosh/is-my-json-valid/issues/14)

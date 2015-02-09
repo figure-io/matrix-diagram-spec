@@ -20,7 +20,8 @@ var expect = chai.expect,
 
 var goodConfig = require( './fixtures/good.json' ),
 	badConfig = require( './fixtures/bad.json' ),
-	tmpl = require( './fixtures/template.json' );
+	tmpl = require( './fixtures/template.json' ),
+	minimal = require( './fixtures/minimal.json' );
 
 
 // TESTS //
@@ -69,6 +70,10 @@ describe( 'matrix-diagram-spec', function tests() {
 		// Bad configuration:
 		isValid = validate( badConfig );
 		assert.notOk( isValid );
+	});
+
+	it( 'should validate a minimal chart configuration', function test() {
+		assert.ok( validate( minimal ) );
 	});
 
 });
