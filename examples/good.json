@@ -103,7 +103,7 @@
 		"color": {
 			"type": "ordinal",
 			"description": "",
-			"domain": [ 0, 0.5, 1 ],
+			"domain": [],
 			"range": [
 				"#eee",
 				"#ccc",
