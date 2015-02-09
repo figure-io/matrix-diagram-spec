@@ -35,10 +35,9 @@ describe( 'brushes', function tests() {
 		template = JSON.parse( tmpl );
 	});
 
-	it( 'should invalidate a chart configuration without a brushes field', function test() {
+	it( 'should not invalidate a chart configuration without a brushes field', function test() {
 		template.brushes = undefined;
-		assert.notOk( validate( template ) );
-		assert.strictEqual( validate.errors.length, 1 );
+		assert.ok( validate( template ) );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid brushes field (non-object)', function test() {

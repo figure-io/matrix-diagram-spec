@@ -682,46 +682,6 @@
 				}
 			}
 		},
-		"transitions": {
-			"description": "specification for transition settings",
-			"type": "object",
-			"properties": {
-				"duration": {
-					"description": "transition duration in milliseconds",
-					"type": "number"
-				}
-			}
-		},
-		"interactions": {
-			"description": "specification for interaction settings",
-			"type": "object",
-			"properties": {
-				"brushable": {
-					"description": "specifies if a chart should be brushable",
-					"type": "boolean"
-				},
-				"brushableRows": {
-					"description": "specifies if a chart should have a brushable x-axis",
-					"type": "boolean"
-				},
-				"brushableCols": {
-					"description": "specifies if a chart should have a brushable y-axis",
-					"type": "boolean"
-				},
-				"sortableRows": {
-					"description": "specifies if a chart should have sortable rows",
-					"type": "boolean"
-				},
-				"sortableCols": {
-					"description": "specifies if a chart should have sortable columns",
-					"type": "boolean"
-				},
-				"resizable": {
-					"description": "specifies if a chart can be resized manually",
-					"type": "boolean"
-				}
-			}
-		},
 		"settings": {
 			"description": "specifies chart generator settings",
 			"type": "object",
@@ -733,6 +693,46 @@
 				"autoUpdate": {
 					"description": "specifies if a chart should update whenever a chart setting changes",
 					"type": "boolean"
+				},
+				"transitions": {
+					"description": "specification for transition settings",
+					"type": "object",
+					"properties": {
+						"duration": {
+							"description": "transition duration in milliseconds",
+							"type": "number"
+						}
+					}
+				},
+				"interactions": {
+					"description": "specification for interaction settings",
+					"type": "object",
+					"properties": {
+						"brushable": {
+							"description": "specifies if a chart should be brushable",
+							"type": "boolean"
+						},
+						"brushableRows": {
+							"description": "specifies if a chart should have a brushable x-axis",
+							"type": "boolean"
+						},
+						"brushableCols": {
+							"description": "specifies if a chart should have a brushable y-axis",
+							"type": "boolean"
+						},
+						"sortableRows": {
+							"description": "specifies if a chart should have sortable rows",
+							"type": "boolean"
+						},
+						"sortableCols": {
+							"description": "specifies if a chart should have sortable columns",
+							"type": "boolean"
+						},
+						"resizable": {
+							"description": "specifies if a chart can be resized manually",
+							"type": "boolean"
+						}
+					}
 				}
 			}
 		}
@@ -747,10 +747,6 @@
 		"scales",
 		"axes",
 		"marks",
-		"legend",
-		"brushes",
-		"transitions",
-		"interactions",
-		"settings"
+		"legend"
 	]
 }

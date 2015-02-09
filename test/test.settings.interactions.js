@@ -35,10 +35,9 @@ describe( 'interactions', function tests() {
 		template = JSON.parse( tmpl );
 	});
 
-	it( 'should invalidate a chart configuration without a interactions field', function test() {
-		template.interactions = undefined;
-		assert.notOk( validate( template ) );
-		assert.strictEqual( validate.errors.length, 1 );
+	it( 'should not invalidate a chart configuration without an interactions field', function test() {
+		template.settings.interactions = undefined;
+		assert.ok( validate( template ) );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid interactions field (non-object)', function test() {
@@ -53,8 +52,8 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions = {};
-			template.interactions = values[ i ];
+			template.settings.interactions = {};
+			template.settings.interactions = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -72,8 +71,8 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.brushable = false;
-			template.interactions.brushable = values[ i ];
+			template.settings.interactions.brushable = false;
+			template.settings.interactions.brushable = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -91,8 +90,8 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.brushableRows = false;
-			template.interactions.brushableRows = values[ i ];
+			template.settings.interactions.brushableRows = false;
+			template.settings.interactions.brushableRows = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -110,8 +109,8 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.brushableCols = false;
-			template.interactions.brushableCols = values[ i ];
+			template.settings.interactions.brushableCols = false;
+			template.settings.interactions.brushableCols = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -129,8 +128,8 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.sortableRows = false;
-			template.interactions.sortableRows = values[ i ];
+			template.settings.interactions.sortableRows = false;
+			template.settings.interactions.sortableRows = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -148,8 +147,8 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.sortableCols = false;
-			template.interactions.sortableCols = values[ i ];
+			template.settings.interactions.sortableCols = false;
+			template.settings.interactions.sortableCols = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -167,15 +166,15 @@ describe( 'interactions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.interactions.resizable = false;
-			template.interactions.resizable = values[ i ];
+			template.settings.interactions.resizable = false;
+			template.settings.interactions.resizable = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should not require any particular fields', function test() {
-		template.interactions = {};
+		template.settings.interactions = {};
 		assert.ok( validate( template ) );
 	});
 

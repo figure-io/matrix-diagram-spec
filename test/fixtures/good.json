@@ -164,19 +164,19 @@
 			}
 		}
 	},
-	"transitions": {
-		"duration": 2500
-	},
-	"interactions": {
-		"brushable": true,
-		"brushableRows": false,
-		"brushableCols": false,
-		"sortableRows": true,
-		"sortableCols": true,
-		"resizable": false
-	},
 	"settings": {
 		"autoResize": true,
-		"autoUpdate": true
+		"autoUpdate": true,
+		"transitions": {
+			"duration": 2500
+		},
+		"interactions": {
+			"brushable": true,
+			"brushableRows": false,
+			"brushableCols": false,
+			"sortableRows": true,
+			"sortableCols": true,
+			"resizable": false
+		}
 	}
 }

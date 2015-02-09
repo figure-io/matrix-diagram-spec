@@ -35,10 +35,9 @@ describe( 'transitions', function tests() {
 		template = JSON.parse( tmpl );
 	});
 
-	it( 'should invalidate a chart configuration without a transitions field', function test() {
-		template.transitions = undefined;
-		assert.notOk( validate( template ) );
-		assert.strictEqual( validate.errors.length, 1 );
+	it( 'should not invalidate a chart configuration without a transitions field', function test() {
+		template.settings.transitions = undefined;
+		assert.ok( validate( template ) );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid transitions field (non-object)', function test() {
@@ -53,8 +52,8 @@ describe( 'transitions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.transitions = {};
-			template.transitions = values[ i ];
+			template.settings.transitions = {};
+			template.settings.transitions = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -72,15 +71,15 @@ describe( 'transitions', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			template.transitions.duration = 2500;
-			template.transitions.duration = values[ i ];
+			template.settings.transitions.duration = 2500;
+			template.settings.transitions.duration = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
 	});
 
 	it( 'should not require any particular fields', function test() {
-		template.transitions = {};
+		template.settings.transitions = {};
 		assert.ok( validate( template ) );
 	});
 

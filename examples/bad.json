@@ -81,19 +81,19 @@
 			}
 		}
 	},
-	"transitions": {
-		"duration": []
-	},
-	"interactions": {
-		"brushable": "true",
-		"brushableRows": [],
-		"brushableCols": {},
-		"sortableRows": null,
-		"sortableCols": 5,
-		"resizable": [false]
-	},
 	"settings": {
 		"autoResize": "true",
-		"autoUpdate": 5
+		"autoUpdate": 5,
+		"transitions": {
+			"duration": []
+		},
+		"interactions": {
+			"brushable": "true",
+			"brushableRows": [],
+			"brushableCols": {},
+			"sortableRows": null,
+			"sortableCols": 5,
+			"resizable": [false]
+		}
 	}
 }

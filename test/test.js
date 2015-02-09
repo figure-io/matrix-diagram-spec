@@ -48,13 +48,15 @@ describe( 'matrix-diagram-spec', function tests() {
 	it( 'should return a matrix diagram configuration object', function test() {
 		var config = validate.template();
 		assert.isObject( config );
+		assert.isString( config.name );
+		assert.isString( config.type );
+		assert.strictEqual( config.type, 'matrix-diagram' );
 		assert.isArray( config.data );
-		assert.isArray( config.marks );
+		assert.isObject( config.canvas );
 		assert.isObject( config.scales );
 		assert.isObject( config.axes );
+		assert.isArray( config.marks );
 		assert.isObject( config.legend );
-		assert.isObject( config.interactions );
-		assert.isObject( config.transitions );
 	});
 
 	it( 'should properly validate chart configurations', function test() {

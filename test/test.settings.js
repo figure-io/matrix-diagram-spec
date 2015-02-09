@@ -35,10 +35,9 @@ describe( 'general settings', function tests() {
 		template = JSON.parse( tmpl );
 	});
 
-	it( 'should invalidate a chart configuration without a settings field', function test() {
+	it( 'should not invalidate a chart configuration without a settings field', function test() {
 		template.settings = undefined;
-		assert.notOk( validate( template ) );
-		assert.strictEqual( validate.errors.length, 1 );
+		assert.ok( validate( template ) );
 	});
 
 	it( 'should invalidate a chart configuration with an invalid settings field (non-object)', function test() {
