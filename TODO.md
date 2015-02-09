@@ -26,7 +26,7 @@ TODO
 ### Tests
 
 1. commented out `null` values --> IMJV issue #14
-2. for `bad.json`, count number of expected errors. Make an assertion.
+2. 
 3. 
 
 
