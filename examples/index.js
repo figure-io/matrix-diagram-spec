@@ -43,9 +43,9 @@ tmpl.axes.y.label = 'Rows';
 tmpl.marks[ 0 ].data.name = 'boop';
 tmpl.marks[ 0 ].properties.fill.field = 'a';
 tmpl.marks[ 0 ].properties.fillOpacity.field = 'b';
-tmpl.interactions.brushable = true;
-tmpl.interactions.sortableRows = true;
-tmpl.interactions.sortableCols = false;
+tmpl.settings.interactions.brushable = true;
+tmpl.settings.interactions.sortableRows = true;
+tmpl.settings.interactions.sortableCols = false;
 
 isValid = validate( tmpl );
 console.log( '\nValid: ' + isValid );

@@ -24,23 +24,17 @@ TODO
 4. monitor IMJV [issue #14](https://github.com/mafintosh/is-my-json-valid/issues/14)
 5. 
 6. 
-7. possibly relax the requirements (e.g., transitions, legend, interactions, settings, brushes, name)
-	-	what are the core elements which are needed?
-	-	how does this fit in with the `config` method?
-		-	stipulate that a partial object be merged with a spec template
-		-	could handle this internally; always merge and then validate. +1
+7. how does this fit in with the `config` method?
+	-	stipulate that a partial object be merged with a spec template
+	-	could handle this internally; always merge and then validate. +1
 8. 
 9. 
 10. should a `title` field be required in `meta`?
-11. should `interactions` and `transitions` be placed under `settings`? 
-	- 	Yes, as really these will be generator specific
-	-	where do we put brushes?
-		-	maybe under settings; brushable rows/cols can be inferred based on existence of brushes
-		-	`brushableRows: {...}`
-		- 	if `null`, `false`, or absent, then no brush element
-		- 	probably be better if brushes were own separate specification, as these may be considered essential data elements, even if not interactive (e.g., in providing context; e.g., with timeseries)
+11. where do we put brushes?
+	- 	probably be better if brushes were own separate specification, as these may be considered essential data elements, even if not interactive (e.g., in providing context; e.g., with timeseries)
+	- 	brushes can be more than just `x` and `y`. Generators/bespoke diagrams could implement others
 12. 
-13. brushes can be more than just `x` and `y`. Generators/bespoke diagrams could implement others.
+13. 
 14. 
 
 
@@ -73,3 +67,4 @@ TODO
 	-	legend.fillOpacity
 2. Should `axes` just be an `object`?
 	-	if a chart supports multiple x/y axes, then those axes should be namespaced accordingly; e.g., x1,x2,x3,x4,...,etc. The key name could be just as easily parsed to get the axis type, as reading the `type` key for each array element
+3. 	
