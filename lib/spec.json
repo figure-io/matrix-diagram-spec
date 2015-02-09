@@ -85,10 +85,7 @@
 		"color": {
 			"type": "ordinal",
 			"description": "{{ maps data values to colors }}",
-			"domain": {
-				"min": null,
-				"max": null
-			},
+			"domain": [],
 			"range": []
 		}
 	},

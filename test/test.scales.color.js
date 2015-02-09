@@ -94,57 +94,20 @@ describe( 'color-scale', function tests() {
 		}
 	});
 
-	it( 'should invalidate a chart configuration with an invalid color-scale domain (non-object)', function test() {
+	it( 'should invalidate a chart configuration with an invalid color-scale domain (non-array)', function test() {
 		var values = [
 			3,
 			true,
 			NaN,
-			// null,
+			null,
 			function(){},
 			'beep',
-			[]
+			{}
 		];
 
-		var domain = template.scales.color.domain;
 		for ( var i = 0; i < values.length; i++ ) {
-			template.scales.color.domain = domain;
+			template.scales.color.domain = [];
 			template.scales.color.domain = values[ i ];
-			assert.notOk( validate( template ) );
-			assert.strictEqual( validate.errors.length, 1 );
-		}
-	});
-
-	it( 'should invalidate a chart configuration with an invalid color-scale min (non-number and non-null)', function test() {
-		var values = [
-			true,
-			// NaN,
-			[],
-			function(){},
-			'beep',
-			{}
-		];
-
-		for ( var i = 0; i < values.length; i++ ) {
-			template.scales.color.domain.min = null;
-			template.scales.color.domain.min = values[ i ];
-			assert.notOk( validate( template ) );
-			assert.strictEqual( validate.errors.length, 1 );
-		}
-	});
-
-	it( 'should invalidate a chart configuration with an invalid color-scale max (non-number and non-null)', function test() {
-		var values = [
-			true,
-			// NaN,
-			[],
-			function(){},
-			'beep',
-			{}
-		];
-
-		for ( var i = 0; i < values.length; i++ ) {
-			template.scales.color.domain.max = null;
-			template.scales.color.domain.max = values[ i ];
 			assert.notOk( validate( template ) );
 			assert.strictEqual( validate.errors.length, 1 );
 		}
@@ -184,16 +147,6 @@ describe( 'color-scale', function tests() {
 		template.scales.color.range = undefined;
 		assert.notOk( validate( template ) );
 		template.scales.color.range = [];
-	});
-
-	it( 'should require `min` and `max` domain fields', function test() {
-		template.scales.color.domain.min = undefined;
-		assert.notOk( validate( template ) );
-		template.scales.color.domain.min = null;
-
-		template.scales.color.domain.max = undefined;
-		assert.notOk( validate( template ) );
-		template.scales.color.domain.max = null;
 	});
 
 });

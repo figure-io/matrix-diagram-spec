@@ -44,10 +44,7 @@
 		},
 		"color": {
 			"type": "ordinal",
-			"domain": {
-				"min": null,
-				"max": null
-			},
+			"domain": [],
 			"range": []
 		}
 	},

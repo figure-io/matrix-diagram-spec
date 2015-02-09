@@ -52,10 +52,7 @@
 		"color": {
 			"type": "ordinal",
 			"description": "",
-			"domain": {
-				"min": null,
-				"max": null
-			},
+			"domain": [],
 			"range": []
 		}
 	},

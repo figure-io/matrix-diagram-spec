@@ -338,22 +338,8 @@
 					"type": "string"
 				},
 				"domain": {
-					"description": "specifies the scale domain (min and max values)",
-					"type": "object",
-					"properties": {
-						"min": {
-							"description": "minimum data value limit; if `null`, automatically calculated from data values",
-							"$ref": "#/definitions/nullOrNumber"
-						},
-						"max": {
-							"description": "maximum data value limit; if `null`, automatically calculated from data values",
-							"$ref": "#/definitions/nullOrNumber"
-						}
-					},
-					"required": [
-						"min",
-						"max"
-					]
+					"description": "specifies the scale domain",
+					"type": "array"
 				},
 				"range": {
 					"description": "list of possible colors to which data values may be mapped",
