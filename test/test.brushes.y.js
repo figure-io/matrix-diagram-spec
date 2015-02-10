@@ -39,7 +39,7 @@ describe( 'y-brush', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
@@ -59,7 +59,7 @@ describe( 'y-brush', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],

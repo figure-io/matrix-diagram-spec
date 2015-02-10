@@ -18,14 +18,6 @@ TODO
 		-	creates server, bound to random port
 		-	launches chrome and opens server url
 		-	
-2. monitor IMJV [issue #14](https://github.com/mafintosh/is-my-json-valid/issues/14)
-3. should a `title` field be required in `meta`?
-4. 
-
-
-### Tests
-
-1. commented out `null` values --> IMJV issue #14
 2. 
 3. 
 

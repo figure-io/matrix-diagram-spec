@@ -39,7 +39,7 @@ describe( 'z-scale', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
@@ -99,7 +99,7 @@ describe( 'z-scale', function tests() {
 			3,
 			true,
 			NaN,
-			// null,
+			null,
 			function(){},
 			'beep',
 			[]
@@ -155,7 +155,7 @@ describe( 'z-scale', function tests() {
 			3,
 			true,
 			NaN,
-			// null,
+			null,
 			function(){},
 			'beep',
 			[]

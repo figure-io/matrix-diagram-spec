@@ -96,7 +96,7 @@ describe( 'mark', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
@@ -174,7 +174,7 @@ describe( 'mark', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
@@ -194,7 +194,7 @@ describe( 'mark', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
@@ -251,7 +251,7 @@ describe( 'mark', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],

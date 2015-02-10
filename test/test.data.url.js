@@ -137,7 +137,7 @@ describe( 'data url', function tests() {
 		var values = [
 			5,
 			true,
-			// null, // FIXME: this should not fail
+			null,
 			NaN,
 			function(){},
 			[],

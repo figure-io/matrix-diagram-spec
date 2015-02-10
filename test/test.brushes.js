@@ -44,7 +44,7 @@ describe( 'brushes', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],

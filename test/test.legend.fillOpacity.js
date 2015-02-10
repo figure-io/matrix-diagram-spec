@@ -39,7 +39,7 @@ describe( 'legend entry: fillOpacity', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],

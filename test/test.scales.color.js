@@ -39,7 +39,7 @@ describe( 'color-scale', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
@@ -118,7 +118,7 @@ describe( 'color-scale', function tests() {
 			3,
 			true,
 			NaN,
-			// null,
+			null,
 			function(){},
 			'beep',
 			{}

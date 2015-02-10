@@ -45,7 +45,7 @@
     "url": "https://github.com/figure-io/matrix-diagram-spec/issues"
   },
   "dependencies": {
-    "is-my-json-valid": "^2.3.1"
+    "is-my-json-valid": "^2.4.1"
   },
   "devDependencies": {
     "chai": "1.x.x",

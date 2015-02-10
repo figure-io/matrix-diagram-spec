@@ -39,7 +39,7 @@ describe( 'x-brush', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
@@ -78,7 +78,7 @@ describe( 'x-brush', function tests() {
 		var values = [
 			5,
 			true,
-			// null,
+			null,
 			NaN,
 			function(){},
 			[],
